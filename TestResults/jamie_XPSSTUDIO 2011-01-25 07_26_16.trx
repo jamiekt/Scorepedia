@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="08241f8e-8c7c-4be5-bbd8-e5a9a437edd5" name="jamie@XPSSTUDIO 2011-01-25 07:26:16" runUser="XPSStudio\jamie" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ec4498f2-b11a-4a4e-84f2-e0e32f3ca741">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="jamie_XPSSTUDIO 2011-01-25 07_26_16" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-01-25T07:26:16.3112519+00:00" queuing="2011-01-25T07:26:17.6233270+00:00" start="2011-01-25T07:26:17.7193325+00:00" finish="2011-01-25T07:26:18.8213955+00:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="SetScore" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="7a479066-ee14-155b-2593-a1786ed196ce">
+      <Execution id="80ddc191-abce-4eeb-ad9b-72b644cedfc1" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.BasicOperations, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetScore" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="7a479066-ee14-155b-2593-a1786ed196ce" executionId="80ddc191-abce-4eeb-ad9b-72b644cedfc1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="80ddc191-abce-4eeb-ad9b-72b644cedfc1" testId="7a479066-ee14-155b-2593-a1786ed196ce" testName="SetScore" computerName="XPSSTUDIO" duration="00:00:00.2014040" startTime="2011-01-25T07:26:17.7303331+00:00" endTime="2011-01-25T07:26:18.6663866+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="80ddc191-abce-4eeb-ad9b-72b644cedfc1">
+      <Output>
+        <DebugTrace>Executing test initialization script...
+1 batches, 0 ResultSets, 0 rows affected
+Executing test script...
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+1 batches, 3 ResultSets, 3 rows affected
+Validating ScoreId_NOT_NULL
+Validating OnePlayer
+Validating Correct__PlayerID
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

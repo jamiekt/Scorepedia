@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PremierLeague__20100410_TestAction.SqlScript" xml:space="preserve">
+    <value>DECLARE	@vSportId		smallint,@vSportName		nvarchar(50);
+SET		@vSportName = 'Football';
+EXEC	[scorepedia].[SetSport]	@pSportName	= @vSportName, @pSportId	= @vSportId OUTPUT;
+DECLARE	@vRegionId	smallint,@vRegionName nvarchar(50) = 'England';
+EXEC	[scorepedia].[SetRegion] @pRegionName=@vRegionName, @pRegionId=@vRegionId OUT;
+DECLARE	@vCompetitionName				nvarchar(50)	= 'Premier League',
+		@vCompetitionTypeId				tinyint,
+		@vCompetitionTypeName			nvarchar(20)	= 'League',
+		@vCompetitionTypeDescription	nvarchar(20)	= 'League Description',
+		@vCompetitionId					smallint,
+		@vSeasonName					nvarchar(30)	= '2009/10',
+		@vSeasonId						smallint,
+		@vCompetitionSeasonId			int,
+		@vFixtureId						int,
+		@vFixtureDate					date,
+		@vFixtureStatusId				tinyint = 2,
+		@vPlayerId						int,
+		@vPlayerName					nvarchar(50),
+		@vScoreId						int,
+		@vHomeFixtureTeamId	int,
+		@vAwayFixtureTeamId	int;
+EXEC	[scorepedia].[SetCompetitionType] @pCompetitionTypeName=@vCompetitionTypeName,@pCompetitionTypeDescription=@vCompetitionTypeDescription,@pCompetitionTypeId=@vCompetitionTypeId OUT;
+EXEC	[scorepedia].[SetCompetition] @pCompetitionName=@vCompetitionName,@pCompetitionTypeId=@vCompetitionTypeId,@pRegionId=@vRegionId,@pCompetitionId=@vCompetitionId OUT;
+EXEC	[scorepedia].[SetSeason] @pSeasonName=@vSeasonName,@pSeasonId=@vSeasonId OUT;
+EXEC	[scorepedia].[SetCompetitionSeason] @pCompetitionId=@vCompetitionId, @pSeasonId=@vSeasonId, @pCompetitionSeasonId=@vCompetitionSeasonId OUT;
+DECLARE	@vBirminghamId					int,
+		@vLiverpoolId					int,
+		@vEvertonId						int,
+		@vWestHamUnitedId				int,
+		@vFulhamId						int,
+		@vWiganId						int,
+		@vArsenalId						int,
+		@vWolverhamptonWanderersId		int,
+		@vBoltonWanderersId				int,
+		@vAstonVillaId					int,
+		@vBurnleyId						int,
+		@vManchesterCityId				int,
+		@vManchesterUnitedId			int,
+		@vChelseaId						int,
+		@vPortsmouthId					int,
+		@vBlackburnRoversId				int,
+		@vStokeCityId					int,
+		@vHullCityId					int,
+		@vSunderlandId					int,
+		@vTottenhamHotspurId			int,
+		@vBirminghamName				nvarchar(40)	=	'Birmingham City',
+		@vLiverpoolName					nvarchar(40)	=	'Liverpool',
+		@vEvertonName					nvarchar(40)	=	'Everton',
+		@vWestHamUnitedName				nvarchar(40)	=	'West Ham United',
+		@vFulhamName					nvarchar(40)	=	'Fulham',
+		@vWiganName						nvarchar(40)	=	'Wigan',
+		@vArsenalName					nvarchar(40)	=	'Arsenal',
+		@vWolverhamptonWanderersName	nvarchar(40)	=	'Wolverhampton Wanderers',
+		@vBoltonWanderersName			nvarchar(40)	=	'Bolton Wanderers',
+		@vAstonVillaName				nvarchar(40)	=	'Aston Villa',
+		@vBurnleyName					nvarchar(40)	=	'Burnley',
+		@vManchesterCityName			nvarchar(40)	=	'Manchester City',
+		@vManchesterUnitedName			nvarchar(40)	=	'Manchester United',
+		@vChelseaName					nvarchar(40)	=	'Chelsea',
+		@vPortsmouthName				nvarchar(40)	=	'Portsmouth',
+		@vBlackburnRoversName			nvarchar(40)	=	'Blackburn Rovers',
+		@vStokeCityName					nvarchar(40)	=	'Stoke City',
+		@vHullCityName					nvarchar(40)	=	'Hull City',
+		@vSunderlandName				nvarchar(40)	=	'Sunderland',
+		@vTottenhamHotspurName			nvarchar(40)	=	'Tottenham Hotspur';
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vBirminghamName, @pTeamId = @vBirminghamId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vLiverpoolName, @pTeamId = @vLiverpoolId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vEvertonName, @pTeamId = @vEvertonId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vWestHamUnitedName, @pTeamId = @vWestHamUnitedId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vFulhamName, @pTeamId = @vFulhamId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vWiganName, @pTeamId = @vWiganId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vArsenalName, @pTeamId = @vArsenalId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vWolverhamptonWanderersName, @pTeamId = @vWolverhamptonWanderersId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vBoltonWanderersName, @pTeamId = @vBoltonWanderersId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vAstonVillaName, @pTeamId = @vAstonVillaId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vBurnleyName, @pTeamId = @vBurnleyId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vManchesterCityName, @pTeamId = @vManchesterCityId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vManchesterUnitedName, @pTeamId = @vManchesterUnitedId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vChelseaName, @pTeamId = @vChelseaId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vPortsmouthName, @pTeamId = @vPortsmouthId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vBlackburnRoversName, @pTeamId = @vBlackburnRoversId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vStokeCityName, @pTeamId = @vStokeCityId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vHullCityName, @pTeamId = @vHullCityId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vSunderlandName, @pTeamId = @vSunderlandId OUT;
+EXEC	[scorepedia].SetTeam	@pSportId = @vSportId, @pTeamName = @vTottenhamHotspurName, @pTeamId = @vTottenhamHotspurId OUT;
+
+SET		@vFixtureDate = '2010-04-04';
+SET		@vFixtureId = NULL;SET @vHomeFixtureTeamId = NULL;SET @vAwayFixtureTeamId = NULL;
+EXEC	[scorepedia].[SetFixture] @pHomeTeamId=@vBirminghamId,@pAwayTeamId=@vLiverpoolId,@pCompetitionSeasonId=@vCompetitionSeasonId,@pFixtureDate=@vFixtureDate,@pFixtureStatusId=@vFixtureStatusId,@pFixtureId=@vFixtureId OUT,@pHomeFixtureTeamId=@vHomeFixtureTeamId OUT,@pAwayFixtureTeamId=@vAwayFixtureTeamId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Liam Ridgewell';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vHomeFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Steven Gerrard';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vAwayFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vFixtureId = NULL;SET @vHomeFixtureTeamId = NULL;SET @vAwayFixtureTeamId = NULL;
+EXEC	[scorepedia].[SetFixture] @pHomeTeamId=@vEvertonId,@pAwayTeamId=@vWestHamUnitedId,@pCompetitionSeasonId=@vCompetitionSeasonId,@pFixtureDate=@vFixtureDate,@pFixtureStatusId=@vFixtureStatusId,@pFixtureId=@vFixtureId OUT,@pHomeFixtureTeamId=@vHomeFixtureTeamId OUT,@pAwayFixtureTeamId=@vAwayFixtureTeamId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Diniyar Bilyaletdinov';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vHomeFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Ayegbeni Yakubu';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vHomeFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Manuel Da Costa';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vAwayFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Araujo Ilan';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vAwayFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vFixtureId = NULL;SET @vHomeFixtureTeamId = NULL;SET @vAwayFixtureTeamId = NULL;
+EXEC	[scorepedia].[SetFixture] @pHomeTeamId=@vFulhamId,@pAwayTeamId=@vWiganId,@pCompetitionSeasonId=@vCompetitionSeasonId,@pFixtureDate=@vFixtureDate,@pFixtureStatusId=@vFixtureStatusId,@pFixtureId=@vFixtureId OUT,@pHomeFixtureTeamId=@vHomeFixtureTeamId OUT,@pAwayFixtureTeamId=@vAwayFixtureTeamId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Stefano Okaka';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vHomeFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Brede Hangeland';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vHomeFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Jason Scotland';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vAwayFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+
+SET		@vFixtureDate = '2010-04-03';
+SET		@vFixtureId = NULL;SET @vHomeFixtureTeamId = NULL;SET @vAwayFixtureTeamId = NULL;
+EXEC	[scorepedia].[SetFixture] @pHomeTeamId=@vArsenalId,@pAwayTeamId=@vWolverhamptonWanderersId,@pCompetitionSeasonId=@vCompetitionSeasonId,@pFixtureDate=@vFixtureDate,@pFixtureStatusId=@vFixtureStatusId,@pFixtureId=@vFixtureId OUT,@pHomeFixtureTeamId=@vHomeFixtureTeamId OUT,@pAwayFixtureTeamId=@vAwayFixtureTeamId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Nicklas Bendtner';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vHomeFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vFixtureId = NULL;SET @vHomeFixtureTeamId = NULL;SET @vAwayFixtureTeamId = NULL;
+EXEC	[scorepedia].[SetFixture] @pHomeTeamId=@vBoltonWanderersId,@pAwayTeamId=@vAstonVillaId,@pCompetitionSeasonId=@vCompetitionSeasonId,@pFixtureDate=@vFixtureDate,@pFixtureStatusId=@vFixtureStatusId,@pFixtureId=@vFixtureId OUT,@pHomeFixtureTeamId=@vHomeFixtureTeamId OUT,@pAwayFixtureTeamId=@vAwayFixtureTeamId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Ashley Young';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vAwayFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vFixtureId = NULL;SET @vHomeFixtureTeamId = NULL;SET @vAwayFixtureTeamId = NULL;
+EXEC	[scorepedia].[SetFixture] @pHomeTeamId=@vBurnleyId,@pAwayTeamId=@vManchesterCityId,@pCompetitionSeasonId=@vCompetitionSeasonId,@pFixtureDate=@vFixtureDate,@pFixtureStatusId=@vFixtureStatusId,@pFixtureId=@vFixtureId OUT,@pHomeFixtureTeamId=@vHomeFixtureTeamId OUT,@pAwayFixtureTeamId=@vAwayFixtureTeamId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Steven Fletcher';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vHomeFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Emmanuel Adebayor';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vAwayFixtureTeamId,@pNumberOfGoals=2,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Craig Bellamy';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vAwayFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Patrick Vieira';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vAwayFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Vincent Kompany';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vAwayFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vFixtureId = NULL;SET @vHomeFixtureTeamId = NULL;SET @vAwayFixtureTeamId = NULL;
+EXEC	[scorepedia].[SetFixture] @pHomeTeamId=@vManchesterUnitedId,@pAwayTeamId=@vChelseaId,@pCompetitionSeasonId=@vCompetitionSeasonId,@pFixtureDate=@vFixtureDate,@pFixtureStatusId=@vFixtureStatusId,@pFixtureId=@vFixtureId OUT,@pHomeFixtureTeamId=@vHomeFixtureTeamId OUT,@pAwayFixtureTeamId=@vAwayFixtureTeamId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Federico Macheda';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vHomeFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Joe Cole';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vAwayFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Didier Drogba';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vAwayFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vFixtureId = NULL;SET @vHomeFixtureTeamId = NULL;SET @vAwayFixtureTeamId = NULL;
+EXEC	[scorepedia].[SetFixture] @pHomeTeamId=@vPortsmouthId,@pAwayTeamId=@vBlackburnRoversid,@pCompetitionSeasonId=@vCompetitionSeasonId,@pFixtureDate=@vFixtureDate,@pFixtureStatusId=@vFixtureStatusId,@pFixtureId=@vFixtureId OUT,@pHomeFixtureTeamId=@vHomeFixtureTeamId OUT,@pAwayFixtureTeamId=@vAwayFixtureTeamId OUT;
+SET		@vFixtureId = NULL;SET @vHomeFixtureTeamId = NULL;SET @vAwayFixtureTeamId = NULL;
+EXEC	[scorepedia].[SetFixture] @pHomeTeamId=@vStokeCityId,@pAwayTeamId=@vHullCityId,@pCompetitionSeasonId=@vCompetitionSeasonId,@pFixtureDate=@vFixtureDate,@pFixtureStatusId=@vFixtureStatusId,@pFixtureId=@vFixtureId OUT,@pHomeFixtureTeamId=@vHomeFixtureTeamId OUT,@pAwayFixtureTeamId=@vAwayFixtureTeamId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Ricardo Fuller';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vHomeFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vFixtureId = NULL;SET @vHomeFixtureTeamId = NULL;SET @vAwayFixtureTeamId = NULL;
+EXEC	[scorepedia].[SetFixture] @pHomeTeamId=@vSunderlandId,@pAwayTeamId=@vTottenhamHotspurId,@pCompetitionSeasonId=@vCompetitionSeasonId,@pFixtureDate=@vFixtureDate,@pFixtureStatusId=@vFixtureStatusId,@pFixtureId=@vFixtureId OUT,@pHomeFixtureTeamId=@vHomeFixtureTeamId OUT,@pAwayFixtureTeamId=@vAwayFixtureTeamId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Darren Bent';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vHomeFixtureTeamId,@pNumberOfGoals=2,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Boudewijn Zenden';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vHomeFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+SET		@vPlayerId = NULL;SET	@vScoreId = NULL;
+SET		@vPlayerName = 'Peter Crouch';
+EXEC	[scorepedia].[SetPlayer]	@pPlayerName=@vPlayerName,@pPlayerId=@vPlayerId OUT;
+EXEC	[scorepedia].[SetScore]		@pPlayerId=@vPlayerId,@pFixtureTeamId=@vAwayFixtureTeamId,@pNumberOfGoals=1,@pScoreId=@vScoreId OUT;
+
+SELECT	*
+FROM	[scorepedia].[Fixture];
+SELECT	*
+FROM	[scorepedia].[FixtureTeam];
+SELECT	*
+FROM	[scorepedia].[Player];
+SELECT	*
+FROM	[scorepedia].[Score];
+SELECT	SUM([NumberOfGoals])
+FROM	[scorepedia].[Score];
+
+
+</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>

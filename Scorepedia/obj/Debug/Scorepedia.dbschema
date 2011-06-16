@@ -1,0 +1,5002 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="1.1" DspName="Microsoft.Data.Schema.Sql.Sql100DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False">
+	<Header>
+		<CustomData Category="ModelCapability">
+			<Metadata Name="ModelCapability" Value="Default" />
+		</CustomData>
+		<CustomData Category="ClrTypesDbSchema" Type="DbSchema">
+			<Metadata Name="ClrTypesDbSchema" Value="True" />
+		</CustomData>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="100" />
+		</CustomData>
+		<CustomData Category="Permissions" Type="XmlPermissions">
+			<Metadata Name="FileName" Value="C:\USERS\JAMIE\DOCUMENTS\VISUAL STUDIO 2010\PROJECTS\SCOREPEDIA\SCOREPEDIA\PROPERTIES\DATABASE.SQLPERMISSIONS" />
+		</CustomData>
+	</Header>
+	<Model>
+		<Element Type="ISql100DatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql90Schema" Name="[scorepedia]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql90CheckConstraint" Name="[scorepedia].[CK_ScorepediaScore_NoZeroGoals]">
+			<Property Name="CheckExpressionScript">
+				<Value><![CDATA[[NumberOfGoals] <> 0]]></Value>
+			</Property>
+			<Relationship Name="CheckExpressionDependencies">
+				<Entry>
+					<References Name="[scorepedia].[Score].[NumberOfGoals]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Score]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="ISql100Table" Name="[scorepedia].[Competition]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Competition].[CompetitionId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Property Name="IdentitySeed" Value="-32768" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Competition].[CompetitionName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Competition].[RegionId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Competition].[CompetitionTypeId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Competition].[CreatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+		</Element>
+		<Element Type="ISql100Table" Name="[scorepedia].[CompetitionSeason]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[CompetitionSeason].[CompetitionSeasonId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Property Name="IdentitySeed" Value="-2147483648" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[CompetitionSeason].[CompetitionId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[CompetitionSeason].[SeasonId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[CompetitionSeason].[CreatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+		</Element>
+		<Element Type="ISql100Table" Name="[scorepedia].[CompetitionType]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[CompetitionType].[CompetitionTypeId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[CompetitionType].[CompetitionTypeName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[CompetitionType].[CompetitionTypeDescription]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[CompetitionType].[CreatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint" Name="[scorepedia].[DF_Scorepedia_Competition_CreatedDate]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[CURRENT_TIMESTAMP]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Competition]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[scorepedia].[Competition].[CreatedDate]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="4" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint" Name="[scorepedia].[DF_Scorepedia_CompetitionSeason_CreatedDate]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[CURRENT_TIMESTAMP]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason].[CreatedDate]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="9" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint" Name="[scorepedia].[DF_Scorepedia_CompetitionType_CreatedDate]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[CURRENT_TIMESTAMP]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionType]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionType].[CreatedDate]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="13" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint" Name="[scorepedia].[DF_Scorepedia_Fixture_CreatedDate]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[CURRENT_TIMESTAMP]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Fixture]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[scorepedia].[Fixture].[CreatedDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint" Name="[scorepedia].[DF_Scorepedia_FixtureTeam_CreatedDate]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[CURRENT_TIMESTAMP]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[CreatedDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint" Name="[scorepedia].[DF_Scorepedia_Player_CreatedDate]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[CURRENT_TIMESTAMP]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Player]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[scorepedia].[Player].[CreatedDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint" Name="[scorepedia].[DF_Scorepedia_Region_CreatedDate]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[CURRENT_TIMESTAMP]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Region]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[scorepedia].[Region].[CreatedDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint" Name="[scorepedia].[DF_Scorepedia_Score_CreatedDate]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[CURRENT_TIMESTAMP]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Score]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[scorepedia].[Score].[CreatedDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint" Name="[scorepedia].[DF_Scorepedia_Season_CreatedDate]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[CURRENT_TIMESTAMP]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Season]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[scorepedia].[Season].[CreatedDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+		</Element>
+		<Element Type="ISql90DefaultConstraint" Name="[scorepedia].[DF_Scorepedia_Team_CreatedDate]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[CURRENT_TIMESTAMP]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Team]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[scorepedia].[Team].[CreatedDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
+		</Element>
+		<Element Type="ISql100Table" Name="[scorepedia].[Fixture]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Fixture].[FixtureId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Property Name="IdentitySeed" Value="-2147483648" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Fixture].[CompetitionSeasonId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Fixture].[FixtureDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Fixture].[FixtureStatusId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Fixture].[CreatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="16" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+		</Element>
+		<Element Type="ISql100Table" Name="[scorepedia].[FixtureStatus]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[FixtureStatus].[FixtureStatusId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[FixtureStatus].[FixtureStatusName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
+		</Element>
+		<Element Type="ISql100Table" Name="[scorepedia].[FixtureTeam]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[FixtureTeam].[FixtureTeamId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Property Name="IdentitySeed" Value="-2147483648" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[FixtureTeam].[FixtureId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[FixtureTeam].[HomeTeamYesNo]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[FixtureTeam].[TeamId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[FixtureTeam].[CreatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="17" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="28" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="29" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="30" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="31" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="32" />
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[scorepedia].[FK_ScorepediaCompetition_ScorepediaCompetitionType]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[scorepedia].[Competition].[CompetitionTypeId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Competition]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionType].[CompetitionTypeId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionType]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="7" />
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[scorepedia].[FK_ScorepediaCompetition_ScorepediaRegion]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[scorepedia].[Competition].[RegionId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Competition]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[scorepedia].[Region].[RegionId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[scorepedia].[Region]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="8" />
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[scorepedia].[FK_ScorepediaCompetitionSeason_ScorepediaCompetition]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason].[CompetitionId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[scorepedia].[Competition].[CompetitionId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[scorepedia].[Competition]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="11" />
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[scorepedia].[FK_ScorepediaCompetitionSeason_ScorepediaSeason]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason].[SeasonId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[scorepedia].[Season].[SeasonId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[scorepedia].[Season]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="12" />
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[scorepedia].[FK_ScorepediaFixture_ScorepediaCompetitionSeason]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[scorepedia].[Fixture].[CompetitionSeasonId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Fixture]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason].[CompetitionSeasonId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="24" />
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[scorepedia].[FK_ScorepediaFixture_ScorepediaFixtureStatus]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[scorepedia].[Fixture].[FixtureStatusId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Fixture]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[scorepedia].[FixtureStatus].[FixtureStatusId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[scorepedia].[FixtureStatus]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="25" />
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[scorepedia].[FK_ScorepediaFixtureTeam_ScorepediaFixture]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[FixtureId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[scorepedia].[Fixture].[FixtureId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[scorepedia].[Fixture]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="31" />
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[scorepedia].[FK_ScorepediaFixtureTeam_ScorepediaTeam]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[TeamId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[scorepedia].[Team].[TeamId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[scorepedia].[Team]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="32" />
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[scorepedia].[FK_ScorepediaScore_ScorepediaFixtureTeam]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[scorepedia].[Score].[FixtureTeamId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Score]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[FixtureTeamId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="33" />
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[scorepedia].[FK_ScorepediaScore_ScorepediaPlayer]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[scorepedia].[Score].[PlayerId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Score]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[scorepedia].[Player].[PlayerId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[scorepedia].[Player]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="34" />
+		</Element>
+		<Element Type="ISql90ForeignKeyConstraint" Name="[scorepedia].[FK_scorepediaTeam_REF_scorepediaSport]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[scorepedia].[Team].[SportId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Team]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[scorepedia].[Sport].[SportId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[scorepedia].[Sport]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql100InlineTableValuedFunction" Name="[scorepedia].[GetPlayerById]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[scorepedia].[Player]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Player].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Player].[PlayerName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[GetPlayerById].[@pPlayerId]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql90ComputedColumn" Name="[scorepedia].[GetPlayerById].[PlayerId]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[scorepedia].[Player].[PlayerId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql90ComputedColumn" Name="[scorepedia].[GetPlayerById].[PlayerName]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[scorepedia].[Player].[PlayerName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="ISqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+		(
+		SELECT	p.[PlayerId],p.[PlayerName]
+		FROM	[Scorepedia].[Player] p
+		WHERE	p.[PlayerId] = @pPlayerId
+		)]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="211" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION [scorepedia].[GetPlayerById]&#xD;&#xA;(&#xD;&#xA;&#x9;@pPlayerId&#x9;&#x9;int&#xD;&#xA;)&#xD;&#xA;RETURNS TABLE &#xD;&#xA;AS&#xD;&#xA;RETURN" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[GetPlayerById].[@pPlayerId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[scorepedia].[PK_Scorepedia_Competition]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Competition].[CompetitionId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Competition]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="5" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[scorepedia].[PK_Scorepedia_CompetitionSeason]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[CompetitionSeason].[CompetitionSeasonId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="10" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[scorepedia].[PK_Scorepedia_CompetitionType]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[CompetitionType].[CompetitionTypeId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionType]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="14" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[scorepedia].[PK_Scorepedia_Fixture]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Fixture].[FixtureId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Fixture]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="23" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[scorepedia].[PK_Scorepedia_FixtureStatusId]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[FixtureStatus].[FixtureStatusId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[FixtureStatus]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="26" />
+		</Element>
+		<Element Type="ISql100UniqueConstraint" Name="[scorepedia].[PK_Scorepedia_FixtureStatusName]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[FixtureStatus].[FixtureStatusName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[FixtureStatus]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="27" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[scorepedia].[PK_Scorepedia_FixtureTeam]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[FixtureTeam].[FixtureTeamId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="28" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[scorepedia].[PK_Scorepedia_PlayerId]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Player].[PlayerId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Player]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="35" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[scorepedia].[PK_Scorepedia_Region]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Region].[RegionId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Region]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="36" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[scorepedia].[PK_Scorepedia_Score]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Score].[ScoreId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Score]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="37" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[scorepedia].[PK_Scorepedia_Season]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Season].[SeasonId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Season]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="38" />
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[scorepedia].[PK_Scorepedia_Sport]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Sport].[SportId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Sport]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[scorepedia].[PK_Scorepedia_Team]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Team].[TeamId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Team]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="39" />
+		</Element>
+		<Element Type="ISql100Table" Name="[scorepedia].[Player]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Player].[PlayerId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Property Name="IdentitySeed" Value="-2147483648" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Player].[PlayerName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Player].[CreatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="18" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="35" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="40" />
+		</Element>
+		<Element Type="ISql100Table" Name="[scorepedia].[Region]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Region].[RegionId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Property Name="IdentitySeed" Value="-32768" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Region].[RegionName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Region].[CreatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="19" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="36" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="41" />
+		</Element>
+		<Element Type="ISql100Table" Name="[scorepedia].[Score]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Score].[ScoreId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Property Name="IdentitySeed" Value="-2147483648" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Score].[PlayerId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Score].[FixtureTeamId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Score].[NumberOfGoals]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="3" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Score].[CreatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="20" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="37" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="42" />
+			<AttachedAnnotation Disambiguator="34" />
+			<AttachedAnnotation Disambiguator="33" />
+		</Element>
+		<Element Type="ISql100Table" Name="[scorepedia].[Season]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Season].[SeasonId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Property Name="IdentitySeed" Value="-32768" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Season].[SeasonName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Season].[CreatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="21" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="38" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="43" />
+		</Element>
+		<Element Type="ISql100Procedure" Name="[scorepedia].[SetCompetition]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	DECLARE	@NewId	TABLE (
+			Id		smallint NOT NULL PRIMARY KEY
+	);
+	BEGIN	TRY
+		SELECT	@pCompetitionId = c.[CompetitionId]
+		FROM	[scorepedia].[Competition] c 
+		WHERE	c.CompetitionName = @pCompetitionName;
+		IF (@pCompetitionId IS NULL)
+		BEGIN
+			INSERT	[scorepedia].[Competition]([CompetitionName],[CompetitionTypeId],[RegionId])
+			OUTPUT	INSERTED.[CompetitionId] INTO @NewId
+			SELECT	@pCompetitionName AS [CompetitionName], @pCompetitionTypeId AS [CompetitionTypeId],@pRegionId AS [RegionId]
+			;
+			--SET		@pCompetitionId =	(SELECT	MAX([Id])
+			--							FROM	@NewId);
+			SET		@pCompetitionId	=	SCOPE_IDENTITY();
+		END
+	END		TRY
+	BEGIN	CATCH
+			DECLARE		@vErrorProcedure	nvarchar(126),
+						@vErrorLine			int,
+						@vErrorMessage		nvarchar(2048),
+						@vErrorNumber		int,
+						@vErrorSeverity		int,
+						@vErrorState		int;
+			SELECT		@vErrorProcedure	= ERROR_PROCEDURE(),
+						@vErrorLine 		= ERROR_LINE(),
+						@vErrorMessage 		= ERROR_MESSAGE(),
+						@vErrorNumber 		= ERROR_NUMBER(),
+						@vErrorSeverity 	= ERROR_SEVERITY(),
+						@vErrorState 		= ERROR_STATE();
+
+			EXEC	[support].[LogAndRethrowError]
+							@pErrorProcedure = @vErrorProcedure,
+							@pErrorLine	= @vErrorLine,
+							@pErrorMessage = @vErrorMessage,
+							@pErrorNumber = @vErrorNumber,
+							@pErrorSeverity = @vErrorSeverity,
+							@pErrorState = @vErrorState;
+			RETURN;	
+	END		CATCH
+	RETURN;
+END]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Competition]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetCompetition].[@pCompetitionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Competition].[CompetitionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Competition].[CompetitionName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetCompetition].[@pCompetitionName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Competition].[CompetitionName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Competition].[CompetitionTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Competition].[RegionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetCompetition].[@pCompetitionTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetCompetition].[@pRegionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Competition].[CompetitionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetCompetition].[@NewId]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetCompetition].[@NewId].[Id]">
+									<Property Name="IsNullable" Value="False" />
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[smallint]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetCompetition].[@pCompetitionName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetCompetition].[@pCompetitionTypeId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetCompetition].[@pRegionId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetCompetition].[@pCompetitionId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1738" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [scorepedia].[SetCompetition]&#xD;&#xA;&#x9;@pCompetitionName&#x9;&#x9;nvarchar(50), &#xD;&#xA;&#x9;@pCompetitionTypeId&#x9;&#x9;tinyint,  --Considered passing CompetitionTypeName &amp; @RegionName instead but that would require an extra round-trip to the DB&#xD;&#xA;&#x9;@pRegionId&#x9;&#x9;&#x9;&#x9;smallint,&#xD;&#xA;&#x9;@pCompetitionId&#x9;&#x9;&#x9;smallint OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[scorepedia].[SetCompetitionSeason]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN	TRY
+		DECLARE	@NewId	TABLE (
+				Id		int NOT NULL PRIMARY KEY
+		);
+		--This assumes 2 teams don't play against each other in the same competition on the same day (unless they swap home and away)
+		SELECT	@pCompetitionSeasonId = f.[CompetitionSeasonId]
+		FROM	[scorepedia].[CompetitionSeason] f
+		WHERE	f.[CompetitionId]	= @pCompetitionId
+		AND		f.[SeasonId]		= @pSeasonId;
+		IF (@pCompetitionSeasonId IS NULL)
+		BEGIN
+			INSERT	[scorepedia].[CompetitionSeason]([CompetitionId],[SeasonId])
+			OUTPUT	INSERTED.[CompetitionSeasonId] INTO @NewId
+			SELECT	@pCompetitionId AS [CompetitionId],@pSeasonId AS [SeasonId]
+			;
+			--SET		@pCompetitionSeasonId =	(SELECT	MAX([Id])
+			--								FROM	@NewId);
+			SET		@pCompetitionId	=	SCOPE_IDENTITY();
+		END
+	END		TRY
+	BEGIN	CATCH
+			DECLARE		@vErrorProcedure	nvarchar(126),
+						@vErrorLine			int,
+						@vErrorMessage		nvarchar(2048),
+						@vErrorNumber		int,
+						@vErrorSeverity		int,
+						@vErrorState		int;
+			SELECT		@vErrorProcedure	= ERROR_PROCEDURE(),
+						@vErrorLine 		= ERROR_LINE(),
+						@vErrorMessage 		= ERROR_MESSAGE(),
+						@vErrorNumber 		= ERROR_NUMBER(),
+						@vErrorSeverity 	= ERROR_SEVERITY(),
+						@vErrorState 		= ERROR_STATE();
+
+			EXEC	[support].[LogAndRethrowError]
+							@pErrorProcedure = @vErrorProcedure,
+							@pErrorLine	= @vErrorLine,
+							@pErrorMessage = @vErrorMessage,
+							@pErrorNumber = @vErrorNumber,
+							@pErrorSeverity = @vErrorSeverity,
+							@pErrorState = @vErrorState;
+			RETURN;	
+	END		CATCH
+	RETURN;
+END]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetCompetitionSeason].[@pCompetitionSeasonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason].[CompetitionSeasonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason].[CompetitionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetCompetitionSeason].[@pCompetitionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason].[SeasonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetCompetitionSeason].[@pSeasonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason].[CompetitionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason].[SeasonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionSeason].[CompetitionSeasonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetCompetitionSeason].[@NewId]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetCompetitionSeason].[@NewId].[Id]">
+									<Property Name="IsNullable" Value="False" />
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetCompetitionSeason].[@pCompetitionId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetCompetitionSeason].[@pSeasonId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetCompetitionSeason].[@pCompetitionSeasonId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1722" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [scorepedia].[SetCompetitionSeason]&#xD;&#xA;&#x9;@pCompetitionId&#x9;&#x9;&#x9;smallint,  &#xD;&#xA;&#x9;@pSeasonId&#x9;&#x9;&#x9;&#x9;smallint,&#xD;&#xA;&#x9;@pCompetitionSeasonId&#x9;int OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[scorepedia].[SetCompetitionType]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DECLARE	@NewId	TABLE (
+			Id		tinyint NOT NULL PRIMARY KEY
+	);
+	BEGIN	TRY
+			SELECT	@pCompetitionTypeId = ct.[CompetitionTypeId]
+			FROM	[scorepedia].[CompetitionType] ct
+			WHERE	ct.[CompetitionTypeName] = @pCompetitionTypeName;
+			IF (@pCompetitionTypeId IS NULL)
+			BEGIN
+				INSERT	[scorepedia].[CompetitionType]([CompetitionTypeName],[CompetitionTypeDescription])
+				OUTPUT	INSERTED.[CompetitionTypeId] INTO @NewId
+				VALUES	(@pCompetitionTypeName,@pCompetitionTypeDescription)
+				;
+				--SET		@pCompetitionTypeId =	(	SELECT	MAX([Id])
+				--									FROM	@NewId);
+				SET		@pCompetitionTypeId	=	SCOPE_IDENTITY();
+			END
+	END		TRY
+	BEGIN	CATCH
+			DECLARE		@vErrorProcedure	nvarchar(126),
+						@vErrorLine			int,
+						@vErrorMessage		nvarchar(2048),
+						@vErrorNumber		int,
+						@vErrorSeverity		int,
+						@vErrorState		int;
+			SELECT		@vErrorProcedure	= ERROR_PROCEDURE(),
+						@vErrorLine 		= ERROR_LINE(),
+						@vErrorMessage 		= ERROR_MESSAGE(),
+						@vErrorNumber 		= ERROR_NUMBER(),
+						@vErrorSeverity 	= ERROR_SEVERITY(),
+						@vErrorState 		= ERROR_STATE();
+
+			EXEC	[support].[LogAndRethrowError]
+							@pErrorProcedure = @vErrorProcedure,
+							@pErrorLine	= @vErrorLine,
+							@pErrorMessage = @vErrorMessage,
+							@pErrorNumber = @vErrorNumber,
+							@pErrorSeverity = @vErrorSeverity,
+							@pErrorState = @vErrorState;
+			RETURN;	
+	END		CATCH
+RETURN]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionType]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetCompetitionType].[@pCompetitionTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionType].[CompetitionTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionType].[CompetitionTypeName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetCompetitionType].[@pCompetitionTypeName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionType].[CompetitionTypeName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionType].[CompetitionTypeDescription]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetCompetitionType].[@pCompetitionTypeDescription]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[CompetitionType].[CompetitionTypeId]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetCompetitionType].[@NewId]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetCompetitionType].[@NewId].[Id]">
+									<Property Name="IsNullable" Value="False" />
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[tinyint]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetCompetitionType].[@pCompetitionTypeName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetCompetitionType].[@pCompetitionTypeDescription]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="500" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetCompetitionType].[@pCompetitionTypeId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1613" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [scorepedia].[SetCompetitionType]&#xD;&#xA;&#x9;@pCompetitionTypeName&#x9;&#x9;&#x9;nvarchar(20),&#xD;&#xA;&#x9;@pCompetitionTypeDescription&#x9;nvarchar(500),&#xD;&#xA;&#x9;@pCompetitionTypeId&#x9;&#x9;&#x9;&#x9;tinyint OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[scorepedia].[SetFixture]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN	TRY
+		IF	(@pHomeTeamId = @pAwayTeamId)
+			RAISERROR(50001,16,1);
+		IF	(@pFixtureStatusId IS NULL)
+		BEGIN
+			IF (	CAST(@pFixtureDate AS DATE) = CAST(CURRENT_TIMESTAMP AS DATE)	) --If on the same day
+				SET	@pFixtureStatusId = 1;	--Latest
+			ELSE
+				SET	@pFixtureStatusId = 2;	--Result
+		END
+
+		DECLARE	@NewId	TABLE (
+				Id		int NOT NULL PRIMARY KEY
+		);
+		DECLARE	@vHomeTeamId		int,
+				@vAwayTeamId		int;
+		BEGIN TRAN
+				--Find a match in same CompetitionSeason, on same day, involving either same home team or same away team
+				SELECT	@pFixtureId			= q.[FixtureId],
+						@vHomeTeamId		= MAX(q.[HomeTeamId]),
+						@vAwayTeamId		= MAX(q.[AwayTeamId]),
+						@pHomeFixtureTeamId	= MAX(q.[HomeFixtureTeamId]),
+						@pAwayFixtureTeamId	= MAX(q.[AwayFixtureTeamId])
+				FROM	(
+						SELECT	f.[FixtureId],
+								CASE	WHEN ft.[HomeTeamYesNo] = 1 THEN ft.[TeamId] ELSE NULL END AS [HomeTeamId],
+								CASE	WHEN ft.[HomeTeamYesNo] = 0 THEN ft.[TeamId] ELSE NULL END AS [AwayTeamId],
+								CASE	WHEN ft.[HomeTeamYesNo] = 1 THEN ft.[FixtureTeamId] ELSE NULL END AS [HomeFixtureTeamId],
+								CASE	WHEN ft.[HomeTeamYesNo] = 0 THEN ft.[FixtureTeamId] ELSE NULL END AS [AwayFixtureTeamId]
+						FROM	[scorepedia].[Fixture] f
+						INNER	JOIN [scorepedia].[FixtureTeam] ft
+						ON		f.[FixtureId] = ft.[FixtureId]
+						WHERE	f.[CompetitionSeasonId]	= @pCompetitionSeasonId
+						AND		f.[FixtureDate]			= @pFixtureDate
+						AND		(	(ft.[HomeTeamYesNo]	= 1	AND	ft.[TeamId]	= @pHomeTeamId)
+								OR	(ft.[HomeTeamYesNo]	= 0	AND	ft.[TeamId]	= @pAwayTeamId))
+						)q
+				GROUP	BY q.[FixtureId];
+
+				IF (@pFixtureId IS NULL)
+				BEGIN
+					INSERT	[scorepedia].[Fixture]([CompetitionSeasonId],[FixtureDate],[FixtureStatusId])
+					OUTPUT	INSERTED.[FixtureId] INTO @NewId
+					SELECT	@pCompetitionSeasonId AS [CompetitionSeasonId],@pFixtureDate AS [FixtureDate],@pFixtureStatusId AS [FixtureStatus]
+					;
+					--SET		@pFixtureId =	(SELECT	MAX([Id])
+					--						FROM	@NewId);
+					SET		@pFixtureId	=	SCOPE_IDENTITY();
+				END
+				
+				IF	(@pHomeFixtureTeamId IS NULL OR @pHomeTeamId <> @vHomeTeamId)
+					EXEC	[scorepedia].[SetFixtureTeam] 
+							@pFixtureId		=	@pFixtureId,
+							@pHomeTeamYesNo	=	1,
+							@pTeamId		=	@pHomeTeamId,
+							@pFixtureTeamId	=	@pHomeFixtureTeamId	OUTPUT;
+				IF	(@pAwayFixtureTeamId IS NULL OR @pAwayTeamId <> @vAwayTeamId)
+					EXEC	[scorepedia].[SetFixtureTeam] 
+							@pFixtureId		=	@pFixtureId,
+							@pHomeTeamYesNo	=	0,
+							@pTeamId		=	@pAwayTeamId,
+							@pFixtureTeamId	=	@pAwayFixtureTeamId	OUTPUT;
+		COMMIT TRAN
+	END		TRY
+	BEGIN	CATCH
+			IF	(@@TRANCOUNT > 0)
+				ROLLBACK;
+			DECLARE		@vErrorProcedure	nvarchar(126),
+						@vErrorLine			int,
+						@vErrorMessage		nvarchar(2048),
+						@vErrorNumber		int,
+						@vErrorSeverity		int,
+						@vErrorState		int;
+			SELECT		@vErrorProcedure	= ERROR_PROCEDURE(),
+						@vErrorLine 		= ERROR_LINE(),
+						@vErrorMessage 		= ERROR_MESSAGE(),
+						@vErrorNumber 		= ERROR_NUMBER(),
+						@vErrorSeverity 	= ERROR_SEVERITY(),
+						@vErrorState 		= ERROR_STATE();
+
+			EXEC	[support].[LogAndRethrowError]
+							@pErrorProcedure = @vErrorProcedure,
+							@pErrorLine	= @vErrorLine,
+							@pErrorMessage = @vErrorMessage,
+							@pErrorNumber = @vErrorNumber,
+							@pErrorSeverity = @vErrorSeverity,
+							@pErrorState = @vErrorState;
+			RETURN;	
+	END		CATCH
+	RETURN;
+END]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixture].[@pHomeTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixture].[@pAwayTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixture].[@pFixtureStatusId]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixture].[@pFixtureDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[date]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Fixture]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Fixture].[FixtureId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[FixtureId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[HomeTeamYesNo]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[TeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[FixtureTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Fixture].[CompetitionSeasonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixture].[@pCompetitionSeasonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Fixture].[FixtureDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixture].[@pFixtureId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Fixture].[FixtureId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixture].[@pHomeFixtureTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixture].[@pAwayFixtureTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Fixture].[CompetitionSeasonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Fixture].[FixtureDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Fixture].[FixtureStatusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Fixture].[FixtureId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@pFixtureId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@pHomeTeamYesNo]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@pTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@pFixtureTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetFixture].[@NewId]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetFixture].[@NewId].[Id]">
+									<Property Name="IsNullable" Value="False" />
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixture].[@pHomeTeamId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixture].[@pAwayTeamId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixture].[@pCompetitionSeasonId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixture].[@pFixtureDate]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixture].[@pFixtureStatusId]">
+						<Property Name="DefaultExpressionScript">
+							<Value><![CDATA[NULL]]></Value>
+						</Property>
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixture].[@pFixtureId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixture].[@pHomeFixtureTeamId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixture].[@pAwayFixtureTeamId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="3757" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [scorepedia].[SetFixture]&#xD;&#xA;&#x9;@pHomeTeamId&#x9;&#x9;&#x9;int,  &#xD;&#xA;&#x9;@pAwayTeamId&#x9;&#x9;&#x9;int,  &#xD;&#xA;&#x9;@pCompetitionSeasonId&#x9;int,  &#xD;&#xA;&#x9;@pFixtureDate&#x9;&#x9;&#x9;date,&#xD;&#xA;&#x9;@pFixtureStatusId&#x9;&#x9;tinyint&#x9;= NULL,&#xD;&#xA;&#x9;@pFixtureId&#x9;&#x9;&#x9;&#x9;int OUTPUT,&#xD;&#xA;&#x9;@pHomeFixtureTeamId&#x9;&#x9;int OUTPUT,&#xD;&#xA;&#x9;@pAwayFixtureTeamId&#x9;&#x9;int OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[scorepedia].[SetFixtureStatus]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DECLARE	@NewId	TABLE (
+			Id		tinyint NOT NULL PRIMARY KEY
+	);
+	BEGIN	TRY
+			SELECT	@pFixtureStatusId = t.[FixtureStatusId]
+			FROM	[scorepedia].[FixtureStatus] t
+			WHERE	t.[FixtureStatusName] = @pFixtureStatusName;
+			IF (@pFixtureStatusId IS NULL)
+			BEGIN
+				INSERT	[scorepedia].[FixtureStatus]([FixtureStatusName])
+				OUTPUT	INSERTED.[FixtureStatusId] INTO @NewId
+				VALUES	(@pFixtureStatusName)
+				;
+				--SET		@pFixtureStatusId =	(	SELECT	MAX([Id])
+				--								FROM	@NewId);
+				SET		@pFixtureStatusId	=	SCOPE_IDENTITY();
+			END
+	END		TRY
+	BEGIN	CATCH
+			DECLARE		@vErrorProcedure	nvarchar(126),
+						@vErrorLine			int,
+						@vErrorMessage		nvarchar(2048),
+						@vErrorNumber		int,
+						@vErrorSeverity		int,
+						@vErrorState		int;
+			SELECT		@vErrorProcedure	= ERROR_PROCEDURE(),
+						@vErrorLine 		= ERROR_LINE(),
+						@vErrorMessage 		= ERROR_MESSAGE(),
+						@vErrorNumber 		= ERROR_NUMBER(),
+						@vErrorSeverity 	= ERROR_SEVERITY(),
+						@vErrorState 		= ERROR_STATE();
+
+			EXEC	[support].[LogAndRethrowError]
+							@pErrorProcedure = @vErrorProcedure,
+							@pErrorLine	= @vErrorLine,
+							@pErrorMessage = @vErrorMessage,
+							@pErrorNumber = @vErrorNumber,
+							@pErrorSeverity = @vErrorSeverity,
+							@pErrorState = @vErrorState;
+			RETURN;	
+	END		CATCH
+RETURN]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureStatus]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureStatus].[@pFixtureStatusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureStatus].[FixtureStatusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureStatus].[FixtureStatusName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureStatus].[@pFixtureStatusName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureStatus].[FixtureStatusName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureStatus].[FixtureStatusId]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetFixtureStatus].[@NewId]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetFixtureStatus].[@NewId].[Id]">
+									<Property Name="IsNullable" Value="False" />
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[tinyint]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixtureStatus].[@pFixtureStatusName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixtureStatus].[@pFixtureStatusId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1472" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [scorepedia].[SetFixtureStatus]&#xD;&#xA;&#x9;@pFixtureStatusName&#x9;&#x9;nvarchar(10),&#xD;&#xA;&#x9;@pFixtureStatusId&#x9;&#x9;tinyint OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[scorepedia].[SetFixtureTeam]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN	TRY
+		DECLARE	@NewId	TABLE (
+				[Id]		int NOT NULL PRIMARY KEY
+		);
+		DECLARE	@FixtureTeams	TABLE (
+				[FixtureTeamId]	int,
+				[HomeTeamYesNo]	int,
+				[TeamId]		int);
+		DECLARE	@vTeamId	int;
+		--First, find out if there are ANY teams for this fixture
+		INSERT	@FixtureTeams([FixtureTeamId],[HomeTeamYesNo],[TeamId])
+		SELECT	ft.[FixtureTeamId],ft.[HomeTeamYesNo],ft.[TeamId]
+		FROM	[scorepedia].[FixtureTeam] ft
+		WHERE	ft.[FixtureId]		=	@pFixtureId;
+
+		IF (@@ROWCOUNT = 0) --No existing teams for this fixture
+		BEGIN
+			INSERT	[scorepedia].[FixtureTeam]([FixtureId],[HomeTeamYesNo],[TeamId])
+			OUTPUT	INSERTED.[FixtureTeamId] INTO @NewId
+			SELECT	@pFixtureId AS [FixtureId], @pHomeTeamYesNo AS [HomeTeamYesNo], @pTeamId AS [TeamId]
+			;
+			--SET		@pFixtureTeamId =	(SELECT	MAX([Id])
+			--							FROM	@NewId);
+			SET		@pFixtureTeamId	=	SCOPE_IDENTITY();
+		END
+		ELSE
+		BEGIN
+			--Is there an existing team for this fixture playing in the specified Home/Away
+			SELECT	@pFixtureTeamId = ft.[FixtureTeamId],
+					@vTeamId		= ft.[TeamId]
+			FROM	@FixtureTeams ft
+			WHERE	ft.[HomeTeamYesNo]	= @pHomeTeamYesNo;
+			IF	(@pFixtureTeamId IS NULL)
+			BEGIN
+				INSERT	[scorepedia].[FixtureTeam]([FixtureId],[HomeTeamYesNo],[TeamId])
+				OUTPUT	INSERTED.[FixtureTeamId] INTO @NewId
+				VALUES	(@pFixtureId,@pHomeTeamYesNo,@pTeamId);
+				SET		@pFixtureTeamId = 	(SELECT	MAX([Id])
+											FROM	@NewId);
+			END
+			ELSE --There is already a team in this fixture at the defined Home/Away
+			BEGIN
+				IF(@pTeamId <> @vTeamId) --Team has changed
+					UPDATE	[scorepedia].[FixtureTeam]
+					SET		[TeamId] = @pTeamId
+					WHERE	[FixtureTeamId] = @pFixtureTeamId;
+			END
+		END
+	END		TRY
+	BEGIN	CATCH
+			DECLARE		@vErrorProcedure	nvarchar(126),
+						@vErrorLine			int,
+						@vErrorMessage		nvarchar(2048),
+						@vErrorNumber		int,
+						@vErrorSeverity		int,
+						@vErrorState		int;
+			SELECT		@vErrorProcedure	= ERROR_PROCEDURE(),
+						@vErrorLine 		= ERROR_LINE(),
+						@vErrorMessage 		= ERROR_MESSAGE(),
+						@vErrorNumber 		= ERROR_NUMBER(),
+						@vErrorSeverity 	= ERROR_SEVERITY(),
+						@vErrorState 		= ERROR_STATE();
+
+			EXEC	[support].[LogAndRethrowError]
+							@pErrorProcedure = @vErrorProcedure,
+							@pErrorLine	= @vErrorLine,
+							@pErrorMessage = @vErrorMessage,
+							@pErrorNumber = @vErrorNumber,
+							@pErrorSeverity = @vErrorSeverity,
+							@pErrorState = @vErrorState;
+			RETURN;	
+	END		CATCH
+	RETURN;
+END]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@FixtureTeams].[FixtureTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@FixtureTeams].[HomeTeamYesNo]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@FixtureTeams].[TeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[FixtureTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[HomeTeamYesNo]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[TeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[FixtureId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@pFixtureId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[FixtureId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[HomeTeamYesNo]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[TeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@pHomeTeamYesNo]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@pTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam].[FixtureTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@pFixtureTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@FixtureTeams].[FixtureTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@FixtureTeams].[TeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@FixtureTeams].[HomeTeamYesNo]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetFixtureTeam].[@NewId].[Id]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetFixtureTeam].[@NewId]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetFixtureTeam].[@NewId].[Id]">
+									<Property Name="IsNullable" Value="False" />
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetFixtureTeam].[@FixtureTeams]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetFixtureTeam].[@FixtureTeams].[FixtureTeamId]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetFixtureTeam].[@FixtureTeams].[HomeTeamYesNo]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetFixtureTeam].[@FixtureTeams].[TeamId]">
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixtureTeam].[@pFixtureId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixtureTeam].[@pHomeTeamYesNo]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[bit]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixtureTeam].[@pTeamId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetFixtureTeam].[@pFixtureTeamId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="2664" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [scorepedia].[SetFixtureTeam]&#xD;&#xA;&#x9;@pFixtureId&#x9;&#x9;int,&#xD;&#xA;&#x9;@pHomeTeamYesNo&#x9;bit,&#xD;&#xA;&#x9;@pTeamId&#x9;&#x9;int,&#xD;&#xA;&#x9;@pFixtureTeamId&#x9;int&#x9;&#x9;OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[scorepedia].[SetPlayer]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DECLARE	@NewId	TABLE (
+			Id		int NOT NULL PRIMARY KEY
+	);
+	BEGIN	TRY
+			SELECT	@pPlayerId = r.[PlayerId]
+			FROM	[scorepedia].[Player] r 
+			WHERE	r.[PlayerName] = @pPlayerName;
+			IF	(@pPlayerId IS NULL)
+			BEGIN
+				INSERT	[scorepedia].[Player]([PlayerName])
+				OUTPUT	INSERTED.[PlayerId] INTO @NewId
+				VALUES	(@pPlayerName)
+				;
+				--SET		@pPlayerId =	(	SELECT	MAX([Id])
+				--							FROM	@NewId);
+				SET		@pPlayerId	=	SCOPE_IDENTITY();
+			END
+	END		TRY
+	BEGIN	CATCH
+			DECLARE		@vErrorProcedure	nvarchar(126),
+						@vErrorLine			int,
+						@vErrorMessage		nvarchar(2048),
+						@vErrorNumber		int,
+						@vErrorSeverity		int,
+						@vErrorState		int;
+			SELECT		@vErrorProcedure	= ERROR_PROCEDURE(),
+						@vErrorLine 		= ERROR_LINE(),
+						@vErrorMessage 		= ERROR_MESSAGE(),
+						@vErrorNumber 		= ERROR_NUMBER(),
+						@vErrorSeverity 	= ERROR_SEVERITY(),
+						@vErrorState 		= ERROR_STATE();
+
+			EXEC	[support].[LogAndRethrowError]
+							@pErrorProcedure = @vErrorProcedure,
+							@pErrorLine	= @vErrorLine,
+							@pErrorMessage = @vErrorMessage,
+							@pErrorNumber = @vErrorNumber,
+							@pErrorSeverity = @vErrorSeverity,
+							@pErrorState = @vErrorState;
+			RETURN;	
+	END		CATCH
+	RETURN]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Player]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetPlayer].[@pPlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Player].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Player].[PlayerName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetPlayer].[@pPlayerName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Player].[PlayerName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Player].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetPlayer].[@NewId]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetPlayer].[@NewId].[Id]">
+									<Property Name="IsNullable" Value="False" />
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetPlayer].[@pPlayerName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetPlayer].[@pPlayerId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1359" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [scorepedia].[SetPlayer]&#xD;&#xA;&#x9;@pPlayerName&#x9;nvarchar(50),&#xD;&#xA;&#x9;@pPlayerId&#x9;&#x9;int OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[scorepedia].[SetRegion]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DECLARE	@NewId	TABLE (
+			Id		smallint NOT NULL PRIMARY KEY
+	);
+	BEGIN	TRY
+			SELECT	@pRegionId = r.[RegionId]
+			FROM	[scorepedia].[Region] r 
+			WHERE	r.[RegionName] = @pRegionName;
+			IF	(@pRegionId IS NULL)
+			BEGIN
+				INSERT	[scorepedia].[Region]([RegionName])
+				OUTPUT	INSERTED.[RegionId] INTO @NewId
+				VALUES	(@pRegionName)
+				;
+				--SET		@pRegionId =	(	SELECT	MAX([Id])
+				--							FROM	@NewId);
+				SET		@pRegionId	=	SCOPE_IDENTITY();
+			END
+	END		TRY
+	BEGIN	CATCH
+			DECLARE		@vErrorProcedure	nvarchar(126),
+						@vErrorLine			int,
+						@vErrorMessage		nvarchar(2048),
+						@vErrorNumber		int,
+						@vErrorSeverity		int,
+						@vErrorState		int;
+			SELECT		@vErrorProcedure	= ERROR_PROCEDURE(),
+						@vErrorLine 		= ERROR_LINE(),
+						@vErrorMessage 		= ERROR_MESSAGE(),
+						@vErrorNumber 		= ERROR_NUMBER(),
+						@vErrorSeverity 	= ERROR_SEVERITY(),
+						@vErrorState 		= ERROR_STATE();
+
+			EXEC	[support].[LogAndRethrowError]
+							@pErrorProcedure = @vErrorProcedure,
+							@pErrorLine	= @vErrorLine,
+							@pErrorMessage = @vErrorMessage,
+							@pErrorNumber = @vErrorNumber,
+							@pErrorSeverity = @vErrorSeverity,
+							@pErrorState = @vErrorState;
+			RETURN;	
+	END		CATCH
+	RETURN]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Region]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetRegion].[@pRegionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Region].[RegionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Region].[RegionName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetRegion].[@pRegionName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Region].[RegionName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Region].[RegionId]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetRegion].[@NewId]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetRegion].[@NewId].[Id]">
+									<Property Name="IsNullable" Value="False" />
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[smallint]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetRegion].[@pRegionName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetRegion].[@pRegionId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1369" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [scorepedia].[SetRegion]&#xD;&#xA;&#x9;@pRegionName&#x9;nvarchar(50),&#xD;&#xA;&#x9;@pRegionId&#x9;&#x9;smallint OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[scorepedia].[SetScore]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN	TRY
+		DECLARE	@NewId	TABLE (
+				Id		int NOT NULL PRIMARY KEY
+		);
+		DECLARE	@vNumberOfGoals	tinyint;
+		SELECT	@pScoreId		= s.[ScoreId],
+				@vNumberOfGoals	= s.[NumberOfGoals]
+		FROM	[scorepedia].[Score] s
+		WHERE	s.[FixtureTeamId]	=	@pFixtureTeamId
+		AND		s.[PlayerId]		=	@pPlayerId;
+
+		IF (@pScoreId IS NULL)
+		BEGIN
+			INSERT	[scorepedia].[Score]([PlayerId],[FixtureTeamId],[NumberOfGoals])
+			OUTPUT	INSERTED.[ScoreId] INTO @NewId
+			SELECT	@pPlayerId AS [PlayerId], @pFixtureTeamId AS [FixtureTeamId], @pNumberOfGoals AS [NumberOfGoals]
+			;
+			--SET		@pScoreId =	(SELECT	MAX([Id])
+			--					FROM	@NewId);
+			SET		@pScoreId	=	SCOPE_IDENTITY();
+		END
+		ELSE
+		BEGIN
+			IF	(@pNumberOfGoals = 0)
+			BEGIN
+				DELETE
+				FROM	[scorepedia].[Score]
+				WHERE	[ScoreId] = @pScoreId;
+				SET		@pScoreId = NULL; --Score record no longer exists so get rid of it
+			END
+			ELSE
+			BEGIN
+				IF	(@vNumberOfGoals <> @pNumberOfGoals) --Only do an update if number of goals has changed!
+					UPDATE	[scorepedia].[Score]
+					SET		[NumberOfGoals] = @pNumberOfGoals
+					WHERE	[ScoreId] = @pScoreId;
+			END
+		END
+	END		TRY
+	BEGIN	CATCH
+			DECLARE		@vErrorProcedure	nvarchar(126),
+						@vErrorLine			int,
+						@vErrorMessage		nvarchar(2048),
+						@vErrorNumber		int,
+						@vErrorSeverity		int,
+						@vErrorState		int;
+			SELECT		@vErrorProcedure	= ERROR_PROCEDURE(),
+						@vErrorLine 		= ERROR_LINE(),
+						@vErrorMessage 		= ERROR_MESSAGE(),
+						@vErrorNumber 		= ERROR_NUMBER(),
+						@vErrorSeverity 	= ERROR_SEVERITY(),
+						@vErrorState 		= ERROR_STATE();
+
+			EXEC	[support].[LogAndRethrowError]
+							@pErrorProcedure = @vErrorProcedure,
+							@pErrorLine	= @vErrorLine,
+							@pErrorMessage = @vErrorMessage,
+							@pErrorNumber = @vErrorNumber,
+							@pErrorSeverity = @vErrorSeverity,
+							@pErrorState = @vErrorState;
+			RETURN;	
+	END		CATCH
+	RETURN;
+END]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[tinyint]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Score]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetScore].[@pScoreId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Score].[ScoreId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Score].[NumberOfGoals]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Score].[FixtureTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetScore].[@pFixtureTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Score].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetScore].[@pPlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Score].[PlayerId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Score].[FixtureTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Score].[NumberOfGoals]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetScore].[@pNumberOfGoals]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Score].[ScoreId]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetScore].[@NewId]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetScore].[@NewId].[Id]">
+									<Property Name="IsNullable" Value="False" />
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetScore].[@pPlayerId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetScore].[@pFixtureTeamId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetScore].[@pNumberOfGoals]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetScore].[@pScoreId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="2086" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [scorepedia].[SetScore]&#xD;&#xA;&#x9;@pPlayerId&#x9;&#x9;int,&#xD;&#xA;&#x9;@pFixtureTeamId&#x9;int,&#xD;&#xA;&#x9;@pNumberOfGoals&#x9;tinyint,&#xD;&#xA;&#x9;@pScoreId&#x9;&#x9;int&#x9;&#x9;OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[scorepedia].[SetSeason]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DECLARE	@NewId	TABLE (
+			Id		smallint NOT NULL PRIMARY KEY
+	);
+	BEGIN	TRY
+			SELECT	@pSeasonId = r.[SeasonId]
+			FROM	[scorepedia].[Season] r 
+			WHERE	r.[SeasonName] = @pSeasonName;
+			IF	(@pSeasonId IS NULL)
+			BEGIN
+				INSERT	[scorepedia].[Season]([SeasonName])
+				OUTPUT	INSERTED.[SeasonId] INTO @NewId
+				VALUES	(@pSeasonName)
+				;
+				--SET		@pSeasonId =	(	SELECT	MAX([Id])
+				--							FROM	@NewId);
+				SET		@pSeasonId	=	SCOPE_IDENTITY();
+			END
+	END		TRY
+	BEGIN	CATCH
+			DECLARE		@vErrorProcedure	nvarchar(126),
+						@vErrorLine			int,
+						@vErrorMessage		nvarchar(2048),
+						@vErrorNumber		int,
+						@vErrorSeverity		int,
+						@vErrorState		int;
+			SELECT		@vErrorProcedure	= ERROR_PROCEDURE(),
+						@vErrorLine 		= ERROR_LINE(),
+						@vErrorMessage 		= ERROR_MESSAGE(),
+						@vErrorNumber 		= ERROR_NUMBER(),
+						@vErrorSeverity 	= ERROR_SEVERITY(),
+						@vErrorState 		= ERROR_STATE();
+
+			EXEC	[support].[LogAndRethrowError]
+							@pErrorProcedure = @vErrorProcedure,
+							@pErrorLine	= @vErrorLine,
+							@pErrorMessage = @vErrorMessage,
+							@pErrorNumber = @vErrorNumber,
+							@pErrorSeverity = @vErrorSeverity,
+							@pErrorState = @vErrorState;
+			RETURN;	
+	END		CATCH
+	RETURN]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Season]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetSeason].[@pSeasonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Season].[SeasonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Season].[SeasonName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetSeason].[@pSeasonName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Season].[SeasonName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Season].[SeasonId]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetSeason].[@NewId]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetSeason].[@NewId].[Id]">
+									<Property Name="IsNullable" Value="False" />
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[smallint]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetSeason].[@pSeasonName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetSeason].[@pSeasonId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1369" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [scorepedia].[SetSeason]&#xD;&#xA;&#x9;@pSeasonName&#x9;nvarchar(50),&#xD;&#xA;&#x9;@pSeasonId&#x9;&#x9;smallint OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[scorepedia].[SetSport]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DECLARE	@NewId	TABLE (
+			Id		smallint NOT NULL PRIMARY KEY
+	);
+	BEGIN	TRY
+			SELECT	@pSportId = t.[SportId]
+			FROM	[scorepedia].[Sport] t
+			WHERE	t.[SportName] = @pSportName;
+			IF	(@pSportId IS NULL)
+			BEGIN
+				INSERT	[scorepedia].[Sport]([SportName])
+				OUTPUT	INSERTED.[SportId] INTO @NewId
+				VALUES	(@pSportName)
+				;
+				--SET		@pSportId =	(	SELECT	MAX([Id])
+				--						FROM	@NewId);
+				SET		@pSportId = SCOPE_IDENTITY();
+			END
+	END		TRY
+	BEGIN	CATCH
+			DECLARE		@vErrorProcedure	nvarchar(126),
+						@vErrorLine			int,
+						@vErrorMessage		nvarchar(2048),
+						@vErrorNumber		int,
+						@vErrorSeverity		int,
+						@vErrorState		int;
+			SELECT		@vErrorProcedure	= ERROR_PROCEDURE(),
+						@vErrorLine 		= ERROR_LINE(),
+						@vErrorMessage 		= ERROR_MESSAGE(),
+						@vErrorNumber 		= ERROR_NUMBER(),
+						@vErrorSeverity 	= ERROR_SEVERITY(),
+						@vErrorState 		= ERROR_STATE();
+
+			EXEC	[support].[LogAndRethrowError]
+							@pErrorProcedure = @vErrorProcedure,
+							@pErrorLine	= @vErrorLine,
+							@pErrorMessage = @vErrorMessage,
+							@pErrorNumber = @vErrorNumber,
+							@pErrorSeverity = @vErrorSeverity,
+							@pErrorState = @vErrorState;
+			RETURN;	
+	END		CATCH
+	RETURN]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Sport]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetSport].[@pSportId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Sport].[SportId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Sport].[SportName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetSport].[@pSportName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Sport].[SportName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Sport].[SportId]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetSport].[@NewId]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetSport].[@NewId].[Id]">
+									<Property Name="IsNullable" Value="False" />
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[smallint]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetSport].[@pSportName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetSport].[@pSportId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1353" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [scorepedia].[SetSport]&#xD;&#xA;&#x9;@pSportName&#x9;&#x9;nvarchar(50),&#xD;&#xA;&#x9;@pSportId&#x9;&#x9;smallint OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[scorepedia].[SetTeam]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DECLARE	@NewId	TABLE (
+			Id		int NOT NULL PRIMARY KEY
+	);
+	BEGIN	TRY
+			SELECT	@pTeamId = r.[TeamId]
+			FROM	[scorepedia].[Team] r
+			WHERE	r.[TeamName] = @pTeamName
+			AND		r.[SportId] = @pSportId;
+			IF	(@pTeamId IS NULL)
+			BEGIN
+				SELECT	1
+				FROM	[scorepedia].[Sport] s
+				WHERE	s.SportId = @pSportId;
+				IF	(@@ROWCOUNT = 0)
+					RAISERROR('No sport exists with SportId=%d',16,1,@pSportId);
+
+				INSERT	[scorepedia].[Team]([TeamName],[SportId])
+				OUTPUT	INSERTED.[TeamId] INTO @NewId
+				VALUES	(@pTeamName,@pSportId)
+				;
+				--SET		@pTeamId =	(	SELECT	MAX([Id])
+				--						FROM	@NewId);
+				SET		@pTeamId	=	SCOPE_IDENTITY();
+			END
+	END		TRY
+	BEGIN	CATCH
+			DECLARE		@vErrorProcedure	nvarchar(126),
+						@vErrorLine			int,
+						@vErrorMessage		nvarchar(2048),
+						@vErrorNumber		int,
+						@vErrorSeverity		int,
+						@vErrorState		int;
+			SELECT		@vErrorProcedure	= ERROR_PROCEDURE(),
+						@vErrorLine 		= ERROR_LINE(),
+						@vErrorMessage 		= ERROR_MESSAGE(),
+						@vErrorNumber 		= ERROR_NUMBER(),
+						@vErrorSeverity 	= ERROR_SEVERITY(),
+						@vErrorState 		= ERROR_STATE();
+
+			EXEC	[support].[LogAndRethrowError]
+							@pErrorProcedure = @vErrorProcedure,
+							@pErrorLine	= @vErrorLine,
+							@pErrorMessage = @vErrorMessage,
+							@pErrorNumber = @vErrorNumber,
+							@pErrorSeverity = @vErrorSeverity,
+							@pErrorState = @vErrorState;
+			RETURN;	
+	END		CATCH
+	RETURN]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Team]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetTeam].[@pTeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Team].[TeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Team].[TeamName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetTeam].[@pTeamName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Team].[SportId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[SetTeam].[@pSportId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Sport]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Sport].[SportId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Team].[TeamName]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Team].[SportId]" />
+				</Entry>
+				<Entry>
+					<References Name="[scorepedia].[Team].[TeamId]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="ISqlDynamicColumnSource" Name="[scorepedia].[SetTeam].[@NewId]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="ISql100SimpleColumn" Name="[scorepedia].[SetTeam].[@NewId].[Id]">
+									<Property Name="IsNullable" Value="False" />
+									<Relationship Name="TypeSpecifier">
+										<Entry>
+											<Element Type="ISql90TypeSpecifier">
+												<Relationship Name="Type">
+													<Entry>
+														<References ExternalSource="BuiltIns" Name="[int]" />
+													</Entry>
+												</Relationship>
+											</Element>
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetTeam].[@pTeamName]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="40" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetTeam].[@pSportId]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[scorepedia].[SetTeam].[@pTeamId]">
+						<Property Name="IsOutput" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1576" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [scorepedia].[SetTeam]&#xD;&#xA;&#x9;@pTeamName&#x9;nvarchar(40),&#xD;&#xA;&#x9;@pSportId&#x9;smallint,&#xD;&#xA;&#x9;@pTeamId&#x9;int&#x9;OUTPUT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100Table" Name="[scorepedia].[Sport]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Sport].[SportId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Property Name="IdentitySeed" Value="-32768" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Sport].[SportName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql100Table" Name="[scorepedia].[Team]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Team].[TeamId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Property Name="IdentitySeed" Value="-2147483648" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Team].[TeamName]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="40" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Team].[SportId]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[scorepedia].[Team].[CreatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="22" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[scorepedia]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="39" />
+		</Element>
+		<Element Type="ISql100UniqueConstraint" Name="[scorepedia].[UK_ScorePedia_Competition_CompetitionName]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Competition].[CompetitionName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Competition]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="6" />
+		</Element>
+		<Element Type="ISql100UniqueConstraint" Name="[scorepedia].[UK_ScorePedia_CompetitionType_CompetitionTypeName]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[CompetitionType].[CompetitionTypeName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[CompetitionType]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="15" />
+		</Element>
+		<Element Type="ISql100UniqueConstraint" Name="[scorepedia].[UK_Scorepedia_PlayerIdFixtureTeamId]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Score].[PlayerId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Score].[FixtureTeamId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Score]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="42" />
+		</Element>
+		<Element Type="ISql100UniqueConstraint" Name="[scorepedia].[UK_Scorepedia_PlayerName]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Player].[PlayerName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Player]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="40" />
+		</Element>
+		<Element Type="ISql100UniqueConstraint" Name="[scorepedia].[UK_ScorePedia_Region_RegionName]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Region].[RegionName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Region]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="41" />
+		</Element>
+		<Element Type="ISql100UniqueConstraint" Name="[scorepedia].[UK_ScorePedia_Season_SeasonName]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Season].[SeasonName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Season]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="43" />
+		</Element>
+		<Element Type="ISql100UniqueConstraint" Name="[scorepedia].[UK_Scorepedia_Sport_SportName]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Sport].[SportName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Sport]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql100UniqueConstraint" Name="[scorepedia].[UK_Scorepedia_Team_TeamNameSportId]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Team].[TeamName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[Team].[SportId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[Team]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql100UniqueConstraint" Name="[scorepedia].[UK_ScorepediaFixtureTeam_FixtureIdHomeTeamYesNo]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[FixtureTeam].[FixtureId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[FixtureTeam].[HomeTeamYesNo]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="29" />
+		</Element>
+		<Element Type="ISql100UniqueConstraint" Name="[scorepedia].[UK_ScorepediaFixtureTeam_FixtureIdTeamId]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[FixtureTeam].[FixtureId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[scorepedia].[FixtureTeam].[TeamId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[scorepedia].[FixtureTeam]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="30" />
+		</Element>
+		<Element Type="ISql90Schema" Name="[support]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql90DefaultConstraint" Name="[support].[DF_Support_ErrorLog_CreatedDate]">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[CURRENT_TIMESTAMP]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[support].[ErrorLog]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[support].[ErrorLog].[CreatedDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="44" />
+		</Element>
+		<Element Type="ISql100Table" Name="[support].[ErrorLog]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[support].[ErrorLog].[ErrorLogId]">
+						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
+						<Property Name="IdentitySeed" Value="-2147483648" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[support].[ErrorLog].[ErrorProcedure]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="126" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[support].[ErrorLog].[ErrorLine]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[support].[ErrorLog].[ErrorMessage]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="2048" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[support].[ErrorLog].[ErrorNumber]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[support].[ErrorLog].[ErrorSeverity]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[support].[ErrorLog].[ErrorState]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SimpleColumn" Name="[support].[ErrorLog].[CreatedDate]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="45" />
+						<AttachedAnnotation Disambiguator="44" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[support]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="ISql100Procedure" Name="[support].[LogAndRethrowError]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	INSERT	[support].[ErrorLog]([ErrorMessage],[ErrorNumber],[ErrorProcedure],[ErrorLine],[ErrorSeverity],[ErrorState])
+	VALUES	(@pErrorMessage,@pErrorNumber,@pErrorProcedure,@pErrorLine,@pErrorSeverity,@pErrorState);
+
+	--Rethrow
+	RAISERROR(@pErrorMessage,@pErrorSeverity,@pErrorState);
+RETURN 0]]></Value>
+			</Property>
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[support].[ErrorLog]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[ErrorLog].[ErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[ErrorLog].[ErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[ErrorLog].[ErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[ErrorLog].[ErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[ErrorLog].[ErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[ErrorLog].[ErrorState]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorMessage]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorNumber]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorProcedure]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorLine]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorSeverity]" />
+				</Entry>
+				<Entry>
+					<References Name="[support].[LogAndRethrowError].[@pErrorState]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Owner">
+				<Entry>
+					<References Name="[support]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[support].[LogAndRethrowError].[@pErrorProcedure]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="126" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[support].[LogAndRethrowError].[@pErrorLine]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[support].[LogAndRethrowError].[@pErrorMessage]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Property Name="Length" Value="2048" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[support].[LogAndRethrowError].[@pErrorNumber]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[support].[LogAndRethrowError].[@pErrorSeverity]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="ISql100SubroutineParameter" Name="[support].[LogAndRethrowError].[@pErrorState]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="ISql90TypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="505" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [support].[LogAndRethrowError]&#xD;&#xA;&#x9;@pErrorProcedure&#x9;nvarchar(126),&#xD;&#xA;&#x9;@pErrorLine&#x9;&#x9;&#x9;int,&#xD;&#xA;&#x9;@pErrorMessage&#x9;&#x9;nvarchar(2048),&#xD;&#xA;&#x9;@pErrorNumber&#x9;&#x9;int,&#xD;&#xA;&#x9;@pErrorSeverity&#x9;&#x9;int,&#xD;&#xA;&#x9;@pErrorState&#x9;&#x9;int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="ISql100PrimaryKeyConstraint" Name="[support].[PK_support_ErrorLog]">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="ISqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[support].[ErrorLog].[ErrorLogId]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[support].[ErrorLog]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="45" />
+		</Element>
+	</Model>
+</DataSchemaModel>

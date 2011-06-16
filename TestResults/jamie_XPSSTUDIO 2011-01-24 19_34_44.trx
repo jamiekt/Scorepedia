@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="5fbee3b9-45b2-48ea-9beb-11e94a99d3eb" name="jamie@XPSSTUDIO 2011-01-24 19:34:44" runUser="XPSStudio\jamie" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ec4498f2-b11a-4a4e-84f2-e0e32f3ca741">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="jamie_XPSSTUDIO 2011-01-24 19_34_44" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-01-24T19:34:44.0794007+00:00" queuing="2011-01-24T19:34:45.7064938+00:00" start="2011-01-24T19:34:45.8655029+00:00" finish="2011-01-24T19:34:56.9321359+00:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="11" executed="11" passed="10" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="XPSSTUDIO" outcome="Error" timestamp="2011-01-24T19:34:56.9311358+00:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="SetTeam" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="bb2aa7ea-f98e-c60c-3591-bec326d71048">
+      <Execution id="c99736d7-ec6e-4eef-9173-48e3551cdc02" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.BasicOperations, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetTeam" />
+    </UnitTest>
+    <UnitTest name="SetRegion" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="19830289-638e-1ac2-5f30-5298e2379ee5">
+      <Execution id="46b6ed68-dcfe-446f-a835-a7862edc2def" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.BasicOperations, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetRegion" />
+    </UnitTest>
+    <UnitTest name="SetCompetition" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="79d5e902-885e-9079-f22f-d085b89c37e5">
+      <Execution id="3e89ddc4-da2b-43ee-aae4-a6876cc57347" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.BasicOperations, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetCompetition" />
+    </UnitTest>
+    <UnitTest name="SetSport" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="c242f75d-b2b9-122d-7600-2a5b3eb74fd8">
+      <Execution id="cb58e907-36ac-452c-b944-2b70c536a414" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.BasicOperations, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetSport" />
+    </UnitTest>
+    <UnitTest name="ZeroingOutAScore" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="fb27a4fb-3298-a97a-c0a6-12e910758b3a">
+      <Execution id="18e79876-f064-4a81-a216-153b4053df16" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.ZeroingAScore, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ZeroingOutAScore" />
+    </UnitTest>
+    <UnitTest name="SetCompetitionType" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="0cfd5b98-683b-79a5-1256-788e55100c2c">
+      <Execution id="267a4a7e-a382-4e9e-b720-b14929e6f32e" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.BasicOperations, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetCompetitionType" />
+    </UnitTest>
+    <UnitTest name="ErrorNumber_8114" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="65e713b3-254c-cded-da54-0ec841a37eb8">
+      <Execution id="e4906823-0c68-4124-b940-acb89f737659" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.MoreThan255GoalsInAMatch, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ErrorNumber_8114" />
+    </UnitTest>
+    <UnitTest name="SetPlayer" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="c1681d8d-1334-5a91-13c4-f8b83598cf87">
+      <Execution id="6bf36cf5-e5bc-4fed-a52b-12620923a614" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.BasicOperations, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetPlayer" />
+    </UnitTest>
+    <UnitTest name="SetScore" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="7a479066-ee14-155b-2593-a1786ed196ce">
+      <Execution id="25fa03f5-1372-4002-8f20-63937640f312" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.BasicOperations, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetScore" />
+    </UnitTest>
+    <UnitTest name="SetSeason" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="7224e00e-dc39-416e-d2b6-4ca0c2af6190">
+      <Execution id="d88ef106-0e95-4a80-94b3-cc248c787bff" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.BasicOperations, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetSeason" />
+    </UnitTest>
+    <UnitTest name="SetFixture" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="b3506ca4-8f08-468d-f200-c37afc5882c5">
+      <Execution id="831965fd-c422-4437-8647-8676ce993fe8" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.BasicOperations, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="SetFixture" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0cfd5b98-683b-79a5-1256-788e55100c2c" executionId="267a4a7e-a382-4e9e-b720-b14929e6f32e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="19830289-638e-1ac2-5f30-5298e2379ee5" executionId="46b6ed68-dcfe-446f-a835-a7862edc2def" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="65e713b3-254c-cded-da54-0ec841a37eb8" executionId="e4906823-0c68-4124-b940-acb89f737659" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7224e00e-dc39-416e-d2b6-4ca0c2af6190" executionId="d88ef106-0e95-4a80-94b3-cc248c787bff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="79d5e902-885e-9079-f22f-d085b89c37e5" executionId="3e89ddc4-da2b-43ee-aae4-a6876cc57347" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7a479066-ee14-155b-2593-a1786ed196ce" executionId="25fa03f5-1372-4002-8f20-63937640f312" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b3506ca4-8f08-468d-f200-c37afc5882c5" executionId="831965fd-c422-4437-8647-8676ce993fe8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bb2aa7ea-f98e-c60c-3591-bec326d71048" executionId="c99736d7-ec6e-4eef-9173-48e3551cdc02" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c1681d8d-1334-5a91-13c4-f8b83598cf87" executionId="6bf36cf5-e5bc-4fed-a52b-12620923a614" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c242f75d-b2b9-122d-7600-2a5b3eb74fd8" executionId="cb58e907-36ac-452c-b944-2b70c536a414" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fb27a4fb-3298-a97a-c0a6-12e910758b3a" executionId="18e79876-f064-4a81-a216-153b4053df16" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="267a4a7e-a382-4e9e-b720-b14929e6f32e" testId="0cfd5b98-683b-79a5-1256-788e55100c2c" testName="SetCompetitionType" computerName="XPSSTUDIO" duration="00:00:00.4723084" startTime="2011-01-24T19:34:45.9205060+00:00" endTime="2011-01-24T19:34:49.0336841+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="267a4a7e-a382-4e9e-b720-b14929e6f32e">
+      <Output>
+        <DebugTrace>Executing test initialization script...
+1 batches, 0 ResultSets, 0 rows affected
+Executing test script...
+1 batches, 3 ResultSets, 3 rows affected
+Validating CompetitionTypeId_NOT_NULL
+Validating OneCompetitionType
+Validating Correct_CompetitionTypeId
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="46b6ed68-dcfe-446f-a835-a7862edc2def" testId="19830289-638e-1ac2-5f30-5298e2379ee5" testName="SetRegion" computerName="XPSSTUDIO" duration="00:00:00.0738047" startTime="2011-01-24T19:34:49.0486850+00:00" endTime="2011-01-24T19:34:49.1366900+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="46b6ed68-dcfe-446f-a835-a7862edc2def">
+      <Output>
+        <DebugTrace>Executing test initialization script...
+1 batches, 0 ResultSets, 0 rows affected
+Executing test script...
+1 batches, 3 ResultSets, 3 rows affected
+Validating RegionId_IS_NOT_NULL_
+Validating OneRegion
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e4906823-0c68-4124-b940-acb89f737659" testId="65e713b3-254c-cded-da54-0ec841a37eb8" testName="ErrorNumber_8114" computerName="XPSSTUDIO" duration="00:00:00.0447706" startTime="2011-01-24T19:34:49.1446905+00:00" endTime="2011-01-24T19:34:49.1996936+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e4906823-0c68-4124-b940-acb89f737659">
+      <Output>
+        <DebugTrace>Executing test script...
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+1 batches, 1 ResultSets, 1 rows affected
+Validating Error_Number_8114
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d88ef106-0e95-4a80-94b3-cc248c787bff" testId="7224e00e-dc39-416e-d2b6-4ca0c2af6190" testName="SetSeason" computerName="XPSSTUDIO" duration="00:00:00.0623246" startTime="2011-01-24T19:34:49.2086941+00:00" endTime="2011-01-24T19:34:49.2796982+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d88ef106-0e95-4a80-94b3-cc248c787bff">
+      <Output>
+        <DebugTrace>Executing test initialization script...
+1 batches, 0 ResultSets, 0 rows affected
+Executing test script...
+1 batches, 3 ResultSets, 3 rows affected
+Validating NotNullSeasonId
+Validating OneSeason
+Validating Correct_SeasonId
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="3e89ddc4-da2b-43ee-aae4-a6876cc57347" testId="79d5e902-885e-9079-f22f-d085b89c37e5" testName="SetCompetition" computerName="XPSSTUDIO" duration="00:00:00.0799587" startTime="2011-01-24T19:34:49.2906988+00:00" endTime="2011-01-24T19:34:49.3857042+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3e89ddc4-da2b-43ee-aae4-a6876cc57347">
+      <Output>
+        <DebugTrace>Executing test initialization script...
+1 batches, 0 ResultSets, 0 rows affected
+Executing test script...
+1 batches, 3 ResultSets, 3 rows affected
+Validating Competitionid_NOT_NULL
+Validating One_Competition
+Validating Correct_CompetitionId
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="25fa03f5-1372-4002-8f20-63937640f312" testId="7a479066-ee14-155b-2593-a1786ed196ce" testName="SetScore" computerName="XPSSTUDIO" duration="00:00:00.1252653" startTime="2011-01-24T19:34:49.3957048+00:00" endTime="2011-01-24T19:34:49.5477135+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="25fa03f5-1372-4002-8f20-63937640f312">
+      <Output>
+        <DebugTrace>Executing test initialization script...
+1 batches, 0 ResultSets, 0 rows affected
+Executing test script...
+1 batches, 3 ResultSets, 9 rows affected
+Validating ScoreId_NOT_NULL
+Validating OnePlayer
+Validating Correct__PlayerID
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="831965fd-c422-4437-8647-8676ce993fe8" testId="b3506ca4-8f08-468d-f200-c37afc5882c5" testName="SetFixture" computerName="XPSSTUDIO" duration="00:00:00.1277835" startTime="2011-01-24T19:34:49.5617143+00:00" endTime="2011-01-24T19:34:49.7147231+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="831965fd-c422-4437-8647-8676ce993fe8">
+      <Output>
+        <DebugTrace>Executing test initialization script...
+1 batches, 0 ResultSets, 0 rows affected
+Executing test script...
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+1 batches, 3 ResultSets, 3 rows affected
+Validating FixtureId_NOT_NULL
+Validating One_Fixture
+Validating Correct_FixtureId
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c99736d7-ec6e-4eef-9173-48e3551cdc02" testId="bb2aa7ea-f98e-c60c-3591-bec326d71048" testName="SetTeam" computerName="XPSSTUDIO" duration="00:00:00.1273796" startTime="2011-01-24T19:34:49.7317240+00:00" endTime="2011-01-24T19:34:49.8847328+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c99736d7-ec6e-4eef-9173-48e3551cdc02">
+      <Output>
+        <DebugTrace>Executing test initialization script...
+1 batches, 0 ResultSets, 0 rows affected
+Executing test script...
+1 batches, 3 ResultSets, 3 rows affected
+Validating TeamId_NOT_NULL
+Validating One_Team
+Validating Correct_TeamId
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6bf36cf5-e5bc-4fed-a52b-12620923a614" testId="c1681d8d-1334-5a91-13c4-f8b83598cf87" testName="SetPlayer" computerName="XPSSTUDIO" duration="00:00:00.1288371" startTime="2011-01-24T19:34:49.8937333+00:00" endTime="2011-01-24T19:34:50.0457420+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6bf36cf5-e5bc-4fed-a52b-12620923a614">
+      <Output>
+        <DebugTrace>Executing test initialization script...
+1 batches, 0 ResultSets, 0 rows affected
+Executing test script...
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+1 batches, 3 ResultSets, 3 rows affected
+Validating PlayerId_NOT_NULL
+Validating One_Player
+Validating Correct_PlayerId
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cb58e907-36ac-452c-b944-2b70c536a414" testId="c242f75d-b2b9-122d-7600-2a5b3eb74fd8" testName="SetSport" computerName="XPSSTUDIO" duration="00:00:00.1011622" startTime="2011-01-24T19:34:50.0587427+00:00" endTime="2011-01-24T19:34:50.1837499+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb58e907-36ac-452c-b944-2b70c536a414">
+      <Output>
+        <DebugTrace>Executing test initialization script...
+1 batches, 0 ResultSets, 0 rows affected
+Executing test script...
+1 batches, 3 ResultSets, 3 rows affected
+Validating Only_one_SportId
+Validating SportId_IS_NOT_NULL
+Validating One_and_only_one_Sport_with_a_given_name
+Validating Returned_SportId_is_correct_for_SportName
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="18e79876-f064-4a81-a216-153b4053df16" testId="fb27a4fb-3298-a97a-c0a6-12e910758b3a" testName="ZeroingOutAScore" computerName="XPSSTUDIO" duration="00:00:06.7393855" startTime="2011-01-24T19:34:50.1927504+00:00" endTime="2011-01-24T19:34:56.9321359+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="18e79876-f064-4a81-a216-153b4053df16">
+    </UnitTestResult>
+  </Results>
+</TestRun>

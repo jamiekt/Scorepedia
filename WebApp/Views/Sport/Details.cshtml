@@ -1,0 +1,24 @@
+﻿@model WebApp.Models.Sport
+
+@{
+    ViewBag.Title = "Details";
+}
+
+@*TODO: Work out how to cope with the Model not containing anything*@ 
+<h2>Sport details: @Model.SportName</h2>
+
+<ul>
+    @foreach (var team in Model.Teams.OrderBy(t => t.TeamName))
+    {
+        <li>
+            @*@Html.ActionLink(team.TeamName, "Team", new { id = team.TeamId });*@
+            @Html.ActionLink(team.TeamName, "Details", "Team", new { id = team.TeamId }, new Object());
+        </li> 
+    }
+</ul>
+
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id=Model.SportId }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

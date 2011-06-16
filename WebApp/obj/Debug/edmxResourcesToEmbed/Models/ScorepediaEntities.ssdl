@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ScorepediaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ScorepediaModelStoreContainer">
+    <EntitySet Name="Player" EntityType="ScorepediaModel.Store.Player" store:Type="Tables" Schema="scorepedia" />
+    <EntitySet Name="Region" EntityType="ScorepediaModel.Store.Region" store:Type="Tables" Schema="scorepedia" />
+    <EntitySet Name="Sport" EntityType="ScorepediaModel.Store.Sport" store:Type="Tables" Schema="scorepedia" />
+    <EntitySet Name="Team" EntityType="ScorepediaModel.Store.Team" store:Type="Tables" Schema="scorepedia" />
+    <AssociationSet Name="FK_scorepediaTeam_REF_scorepediaSport" Association="ScorepediaModel.Store.FK_scorepediaTeam_REF_scorepediaSport">
+      <End Role="Sport" EntitySet="Sport" />
+      <End Role="Team" EntitySet="Team" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="PlayerId" />
+    </Key>
+    <Property Name="PlayerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerName" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="CreatedDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="RegionId" />
+    </Key>
+    <Property Name="RegionId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RegionName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreatedDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sport">
+    <Key>
+      <PropertyRef Name="SportId" />
+    </Key>
+    <Property Name="SportId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SportName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="TeamId" />
+    </Key>
+    <Property Name="TeamId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TeamName" Type="nvarchar" Nullable="false" MaxLength="40" />
+    <Property Name="SportId" Type="smallint" Nullable="false" />
+    <Property Name="CreatedDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_scorepediaTeam_REF_scorepediaSport">
+    <End Role="Sport" Type="ScorepediaModel.Store.Sport" Multiplicity="1" />
+    <End Role="Team" Type="ScorepediaModel.Store.Team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sport">
+        <PropertyRef Name="SportId" />
+      </Principal>
+      <Dependent Role="Team">
+        <PropertyRef Name="SportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SetSport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scorepedia">
+    <Parameter Name="pSportName" Type="nvarchar" Mode="In" />
+    <Parameter Name="pSportId" Type="smallint" Mode="InOut" />
+  </Function>
+</Schema>

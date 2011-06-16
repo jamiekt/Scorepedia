@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="dc011628-9065-41a7-905b-3999e9b51846" name="jamie@XPSSTUDIO 2011-01-24 19:39:25" runUser="XPSStudio\jamie" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ec4498f2-b11a-4a4e-84f2-e0e32f3ca741">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="jamie_XPSSTUDIO 2011-01-24 19_39_25" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-01-24T19:39:26.0005257+00:00" queuing="2011-01-24T19:39:26.1685353+00:00" start="2011-01-24T19:39:26.2065375+00:00" finish="2011-01-24T19:39:26.8095720+00:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="PremierLeague__20100410" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="0cb8093a-21cc-2789-8dbd-32dabc6a2520">
+      <Execution id="29f5563f-1be1-4509-82fe-65587b2351c0" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.PremierLeague20100410, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PremierLeague__20100410" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0cb8093a-21cc-2789-8dbd-32dabc6a2520" executionId="29f5563f-1be1-4509-82fe-65587b2351c0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="29f5563f-1be1-4509-82fe-65587b2351c0" testId="0cb8093a-21cc-2789-8dbd-32dabc6a2520" testName="PremierLeague__20100410" computerName="XPSSTUDIO" duration="00:00:00.0875305" startTime="2011-01-24T19:39:26.2175381+00:00" endTime="2011-01-24T19:39:26.7535688+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="29f5563f-1be1-4509-82fe-65587b2351c0">
+      <Output>
+        <DebugTrace>Executing test script...
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+1 batches, 5 ResultSets, 77 rows affected
+Validating Fixture_
+Validating FixtureTeam_
+</DebugTrace>
+        <ErrorInfo>
+          <Message>RowCountCondition Condition (FixtureTeam_) Failed: ResultSet 2 : The 20 row(s) did not match the 10 expected row(s).</Message>
+          <StackTrace>   at Microsoft.Data.Schema.UnitTesting.Conditions.TestCondition.FormatAndThrow(Exception innerException, String specificMessageFormat, Object[] arg)
+   at Microsoft.Data.Schema.UnitTesting.Conditions.RowCountCondition.DoAssert(DataTable resultSet)
+   at Microsoft.Data.Schema.UnitTesting.Conditions.ResultSetCondition.Assert(DbConnection validationConnection, ExecutionResult[] results)
+   at Microsoft.Data.Schema.UnitTesting.ExecutionEngine.EvaluateConditions(DbConnection validationConnection, ExecutionResult[] results, Collection`1 conditions)
+   at Microsoft.Data.Schema.UnitTesting.DatabaseTestService.Execute(ConnectionContext scriptExecutionContext, ConnectionContext privilegedExecutionContext, DatabaseTestAction action, DbParameter[] sqlParameters)
+   at scorepediaTest.PremierLeague20100410.PremierLeague__20100410() in C:\Users\jamie\Documents\Visual Studio 2010\Projects\scorepedia\scorepediaTest\PremierLeague20100410.cs:line 60
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

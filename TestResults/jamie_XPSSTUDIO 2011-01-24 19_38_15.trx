@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="de8ee2c3-0391-4b7a-8cdc-87d667f95b63" name="jamie@XPSSTUDIO 2011-01-24 19:38:15" runUser="XPSStudio\jamie" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ec4498f2-b11a-4a4e-84f2-e0e32f3ca741">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="jamie_XPSSTUDIO 2011-01-24 19_38_15" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-01-24T19:38:15.7435072+00:00" queuing="2011-01-24T19:38:15.7555079+00:00" start="2011-01-24T19:38:15.7615083+00:00" finish="2011-01-24T19:38:16.0765263+00:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="PremierLeague__20100410" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="0cb8093a-21cc-2789-8dbd-32dabc6a2520">
+      <Execution id="3b7ce804-8c2a-47fe-abba-41f2942f4039" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.PremierLeague20100410, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PremierLeague__20100410" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0cb8093a-21cc-2789-8dbd-32dabc6a2520" executionId="3b7ce804-8c2a-47fe-abba-41f2942f4039" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="3b7ce804-8c2a-47fe-abba-41f2942f4039" testId="0cb8093a-21cc-2789-8dbd-32dabc6a2520" testName="PremierLeague__20100410" computerName="XPSSTUDIO" duration="00:00:00.0499432" startTime="2011-01-24T19:38:15.7655085+00:00" endTime="2011-01-24T19:38:16.0605254+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3b7ce804-8c2a-47fe-abba-41f2942f4039">
+      <Output>
+        <DebugTrace>Executing test script...
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+Sql Error: 'Warning: Null value is eliminated by an aggregate or other SET operation.' (Severity 0, State 1)
+1 batches, 5 ResultSets, 77 rows affected
+Validating Fixture_
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

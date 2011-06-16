@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WebApp.Models.Player>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Browse Players</h3>
+
+<p>Select from @Model.Count() players:</p>
+<ul>
+    @foreach (var player in Model)
+    {
+        <!--<li>@player.PlayerName</li>-->
+        <li>@Html.ActionLink(player.PlayerName,"Details",new {id = player.PlayerId})</li>
+    }
+</ul>

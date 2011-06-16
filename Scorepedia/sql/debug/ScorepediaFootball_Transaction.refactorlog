@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0">
+  <Operation Name="Rename Refactor" Key="4764918c-56e7-4a4c-9b12-daeea4b66901" ChangeDateTime="04/07/2010 21:29:39">
+    <Property Name="ElementName" Value="[scorepedia].[AddCompetition]" />
+    <Property Name="ElementType" Value="ISql100Procedure" />
+    <Property Name="ParentElementName" Value="[scorepedia]" />
+    <Property Name="ParentElementType" Value="ISql90Schema" />
+    <Property Name="NewName" Value="[SetCompetition]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="35bd0e36-9978-4c05-9ba0-302c5aba08b8" ChangeDateTime="04/07/2010 21:29:54">
+    <Property Name="ElementName" Value="[scorepedia].[AddCompetitionType]" />
+    <Property Name="ElementType" Value="ISql100Procedure" />
+    <Property Name="ParentElementName" Value="[scorepedia]" />
+    <Property Name="ParentElementType" Value="ISql90Schema" />
+    <Property Name="NewName" Value="[SetCompetitionType]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1ded14e9-bea3-473f-bb28-ee4ccde392f1" ChangeDateTime="04/07/2010 21:30:06">
+    <Property Name="ElementName" Value="[scorepedia].[AddRegion]" />
+    <Property Name="ElementType" Value="ISql100Procedure" />
+    <Property Name="ParentElementName" Value="[scorepedia]" />
+    <Property Name="ParentElementType" Value="ISql90Schema" />
+    <Property Name="NewName" Value="[SetRegion]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a921778b-9374-41ed-abde-a25ca6a231a9" ChangeDateTime="04/08/2010 20:06:52">
+    <Property Name="ElementName" Value="[scorepedia].[Match]" />
+    <Property Name="ElementType" Value="ISql100Table" />
+    <Property Name="ParentElementName" Value="[scorepedia]" />
+    <Property Name="ParentElementType" Value="ISql90Schema" />
+    <Property Name="NewName" Value="Fixture" />
+  </Operation>
+</Operations>

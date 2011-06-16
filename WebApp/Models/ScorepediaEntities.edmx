@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ScorepediaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ScorepediaModelStoreContainer">
+          <EntitySet Name="Player" EntityType="ScorepediaModel.Store.Player" store:Type="Tables" Schema="scorepedia" />
+          <EntitySet Name="Region" EntityType="ScorepediaModel.Store.Region" store:Type="Tables" Schema="scorepedia" />
+          <EntitySet Name="Sport" EntityType="ScorepediaModel.Store.Sport" store:Type="Tables" Schema="scorepedia" />
+          <EntitySet Name="Team" EntityType="ScorepediaModel.Store.Team" store:Type="Tables" Schema="scorepedia" />
+          <AssociationSet Name="FK_scorepediaTeam_REF_scorepediaSport" Association="ScorepediaModel.Store.FK_scorepediaTeam_REF_scorepediaSport">
+            <End Role="Sport" EntitySet="Sport" />
+            <End Role="Team" EntitySet="Team" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="PlayerId" />
+          </Key>
+          <Property Name="PlayerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PlayerName" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="CreatedDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="RegionId" />
+          </Key>
+          <Property Name="RegionId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RegionName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sport">
+          <Key>
+            <PropertyRef Name="SportId" />
+          </Key>
+          <Property Name="SportId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SportName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="TeamId" />
+          </Key>
+          <Property Name="TeamId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TeamName" Type="nvarchar" Nullable="false" MaxLength="40" />
+          <Property Name="SportId" Type="smallint" Nullable="false" />
+          <Property Name="CreatedDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_scorepediaTeam_REF_scorepediaSport">
+          <End Role="Sport" Type="ScorepediaModel.Store.Sport" Multiplicity="1" />
+          <End Role="Team" Type="ScorepediaModel.Store.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sport">
+              <PropertyRef Name="SportId" />
+            </Principal>
+            <Dependent Role="Team">
+              <PropertyRef Name="SportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SetSport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scorepedia">
+          <Parameter Name="pSportName" Type="nvarchar" Mode="In" />
+          <Parameter Name="pSportId" Type="smallint" Mode="InOut" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ScorepediaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ScorepediaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Players" EntityType="ScorepediaModel.Player" />
+          <EntitySet Name="Sports" EntityType="ScorepediaModel.Sport" />
+          <EntitySet Name="Teams" EntityType="ScorepediaModel.Team" />
+          <AssociationSet Name="FK_scorepediaTeam_REF_scorepediaSport" Association="ScorepediaModel.FK_scorepediaTeam_REF_scorepediaSport">
+            <End Role="Sport" EntitySet="Sports" />
+            <End Role="Team" EntitySet="Teams" />
+          </AssociationSet>
+          <EntitySet Name="Regions" EntityType="ScorepediaModel.Region" />
+        </EntityContainer>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="PlayerId" />
+          </Key>
+          <Property Name="PlayerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlayerName" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sport">
+          <Key>
+            <PropertyRef Name="SportId" />
+          </Key>
+          <Property Name="SportId" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SportName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Teams" Relationship="ScorepediaModel.FK_scorepediaTeam_REF_scorepediaSport" FromRole="Sport" ToRole="Team" />
+        </EntityType>
+        <EntityType Name="Team">
+          <Key>
+            <PropertyRef Name="TeamId" />
+          </Key>
+          <Property Name="TeamId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeamName" Type="String" Nullable="false" MaxLength="40" Unicode="true" FixedLength="false" />
+          <Property Name="SportId" Type="Int16" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Sport" Relationship="ScorepediaModel.FK_scorepediaTeam_REF_scorepediaSport" FromRole="Team" ToRole="Sport" />
+        </EntityType>
+        <Association Name="FK_scorepediaTeam_REF_scorepediaSport">
+          <End Role="Sport" Type="ScorepediaModel.Sport" Multiplicity="1" />
+          <End Role="Team" Type="ScorepediaModel.Team" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sport">
+              <PropertyRef Name="SportId" />
+            </Principal>
+            <Dependent Role="Team">
+              <PropertyRef Name="SportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="RegionId" />
+          </Key>
+          <Property Type="Int16" Name="RegionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RegionName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ScorepediaModelStoreContainer" CdmEntityContainer="ScorepediaEntities">
+          <EntitySetMapping Name="Players"><EntityTypeMapping TypeName="ScorepediaModel.Player"><MappingFragment StoreEntitySet="Player">
+            <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+            <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+            <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Sports"><EntityTypeMapping TypeName="ScorepediaModel.Sport"><MappingFragment StoreEntitySet="Sport">
+            <ScalarProperty Name="SportId" ColumnName="SportId" />
+            <ScalarProperty Name="SportName" ColumnName="SportName" />
+          </MappingFragment></EntityTypeMapping>
+            </EntitySetMapping>
+          <EntitySetMapping Name="Teams"><EntityTypeMapping TypeName="ScorepediaModel.Team"><MappingFragment StoreEntitySet="Team">
+            <ScalarProperty Name="TeamId" ColumnName="TeamId" />
+            <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+            <ScalarProperty Name="SportId" ColumnName="SportId" />
+            <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="ScorepediaModel.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ScorepediaEntities">
+        <EntityTypeShape EntityType="ScorepediaModel.Player" Width="1.5" PointX="0.75" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScorepediaModel.Sport" Width="1.5" PointX="0.75" PointY="1.25" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ScorepediaModel.Team" Width="1.5" PointX="3" PointY="0.875" Height="1.9802864583333335" IsExpanded="true" />
+        <AssociationConnector Association="ScorepediaModel.FK_scorepediaTeam_REF_scorepediaSport" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.047841796875" />
+          <ConnectorPoint PointX="3" PointY="2.047841796875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ScorepediaModel.Region" Width="1.5" PointX="3.375" PointY="3.75" Height="1.5956835937499996" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

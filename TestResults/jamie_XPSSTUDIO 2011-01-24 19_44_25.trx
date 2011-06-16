@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="22f7283c-f574-4aa2-97c4-ff594caa6f9b" name="jamie@XPSSTUDIO 2011-01-24 19:44:25" runUser="XPSStudio\jamie" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ec4498f2-b11a-4a4e-84f2-e0e32f3ca741">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="jamie_XPSSTUDIO 2011-01-24 19_44_25" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-01-24T19:44:25.8206744+00:00" queuing="2011-01-24T19:44:25.8316751+00:00" start="2011-01-24T19:44:25.8396755+00:00" finish="2011-01-24T19:44:26.1696944+00:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ZeroingOutAScore" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="fb27a4fb-3298-a97a-c0a6-12e910758b3a">
+      <Execution id="2599ea1b-1b46-4d88-ba55-7573fcf27a88" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.ZeroingAScore, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ZeroingOutAScore" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="fb27a4fb-3298-a97a-c0a6-12e910758b3a" executionId="2599ea1b-1b46-4d88-ba55-7573fcf27a88" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="2599ea1b-1b46-4d88-ba55-7573fcf27a88" testId="fb27a4fb-3298-a97a-c0a6-12e910758b3a" testName="ZeroingOutAScore" computerName="XPSSTUDIO" duration="00:00:00.0554061" startTime="2011-01-24T19:44:25.8456759+00:00" endTime="2011-01-24T19:44:26.1516934+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2599ea1b-1b46-4d88-ba55-7573fcf27a88">
+      <Output>
+        <DebugTrace>Executing pre-test script...
+1 batches, 0 ResultSets, 10 rows affected
+Executing test script...
+1 batches, 3 ResultSets, 15 rows affected
+Validating GoalsScoredZeroedOut
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

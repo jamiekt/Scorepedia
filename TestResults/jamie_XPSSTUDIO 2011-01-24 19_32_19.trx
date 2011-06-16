@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="871d6475-a9a8-45b4-8a77-33699bc5017b" name="jamie@XPSSTUDIO 2011-01-24 19:32:19" runUser="XPSStudio\jamie" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="ec4498f2-b11a-4a4e-84f2-e0e32f3ca741">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="jamie_XPSSTUDIO 2011-01-24 19_32_19" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2011-01-24T19:32:19.5131320+00:00" queuing="2011-01-24T19:32:19.6971425+00:00" start="2011-01-24T19:32:19.7311445+00:00" finish="2011-01-24T19:32:20.3431795+00:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="PremierLeague_20100410" storage="c:\users\jamie\documents\visual studio 2010\projects\scorepedia\scorepediatest\bin\debug\scorepediatest.dll" id="6e83c22e-0c74-bd59-424d-f45ede62e991">
+      <Execution id="77bd6916-b182-4137-8ad6-868badb6859c" />
+      <TestMethod codeBase="C:/Users/jamie/Documents/Visual Studio 2010/Projects/scorepedia/scorepediaTest/bin/Debug/scorepediaTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="scorepediaTest.PremierLeague20100410, scorepediaTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="PremierLeague_20100410" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="6e83c22e-0c74-bd59-424d-f45ede62e991" executionId="77bd6916-b182-4137-8ad6-868badb6859c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="77bd6916-b182-4137-8ad6-868badb6859c" testId="6e83c22e-0c74-bd59-424d-f45ede62e991" testName="PremierLeague_20100410" computerName="XPSSTUDIO" duration="00:00:00.1450420" startTime="2011-01-24T19:32:19.7421451+00:00" endTime="2011-01-24T19:32:20.3201782+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="77bd6916-b182-4137-8ad6-868badb6859c">
+      <Output>
+        <DebugTrace>Executing pre-test script...
+1 batches, 0 ResultSets, 100 rows affected
+Executing test script...
+1 batches, 25 ResultSets, 207 rows affected
+Validating Fixture
+</DebugTrace>
+        <ErrorInfo>
+          <Message>RowCountCondition Condition (Fixture) Failed: ResultSet 1 : The 1 row(s) did not match the 10 expected row(s).</Message>
+          <StackTrace>   at Microsoft.Data.Schema.UnitTesting.Conditions.TestCondition.FormatAndThrow(Exception innerException, String specificMessageFormat, Object[] arg)
+   at Microsoft.Data.Schema.UnitTesting.Conditions.RowCountCondition.DoAssert(DataTable resultSet)
+   at Microsoft.Data.Schema.UnitTesting.Conditions.ResultSetCondition.Assert(DbConnection validationConnection, ExecutionResult[] results)
+   at Microsoft.Data.Schema.UnitTesting.ExecutionEngine.EvaluateConditions(DbConnection validationConnection, ExecutionResult[] results, Collection`1 conditions)
+   at Microsoft.Data.Schema.UnitTesting.DatabaseTestService.Execute(ConnectionContext scriptExecutionContext, ConnectionContext privilegedExecutionContext, DatabaseTestAction action, DbParameter[] sqlParameters)
+   at scorepediaTest.PremierLeague20100410.PremierLeague_20100410() in C:\Users\jamie\Documents\Visual Studio 2010\Projects\scorepedia\scorepediaTest\PremierLeague20100410.cs:line 43
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

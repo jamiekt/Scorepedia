@@ -1,0 +1,776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SetSport_TestAction.SqlScript" xml:space="preserve">
+    <value>--0. Sport-----------------------
+DECLARE	@vSportId		smallint,
+		@vSportName		nvarchar(50);
+SET		@vSportName = 'Football';
+EXEC	[scorepedia].[SetSport]
+		@pSportName	= @vSportName,
+		@pSportId	= @vSportId OUTPUT;
+--Check we get a value back and that it IS NOT NULL
+SELECT	CASE WHEN @vSportId IS NULL THEN 0 ELSE 1 END;
+
+--Check our region got inserted
+SELECT	r.[SportId],r.[SportName]
+FROM	[scorepedia].[Sport] r
+WHERE	r.[SportName] = @vSportName;
+
+--Check our returned RegionId is the correct one
+SELECT	r.[SportId],r.[SportName]
+FROM	[scorepedia].[Sport] r
+WHERE	r.[SportName] = @vSportName
+AND		r.[SportId] = @vSportId;
+</value>
+  </data>
+  <data name="SetRegion_TestAction.SqlScript" xml:space="preserve">
+    <value>--0. Sport-----------------------
+DECLARE	@vSportId		smallint,
+		@vSportName		nvarchar(50);
+SET		@vSportName = 'Football';
+EXEC	[scorepedia].[SetSport]
+		@pSportName	= @vSportName,
+		@pSportId	= @vSportId OUTPUT;
+
+--1. Region-----------------------
+DECLARE	@vRegionId		smallint,
+		@vRegionName	nvarchar(50);
+SET		@vRegionName = 'England';
+EXEC	[scorepedia].[SetRegion]
+		@pRegionName = @vRegionName,
+		@pRegionId = @vRegionId OUTPUT;
+
+--Check we get a value back and that it IS NOT NULL
+SELECT	CASE WHEN @vRegionId IS NULL THEN 0 ELSE 1 END;
+
+--Check our region got inserted
+SELECT	r.[RegionId],r.[RegionName]
+FROM	[scorepedia].[Region] r
+WHERE	r.[RegionName] = @vRegionName;
+
+--Check our returned RegionId is the correct one
+SELECT	r.[RegionId],r.[RegionName]
+FROM	[scorepedia].[Region] r
+WHERE	r.[RegionName] = @vRegionName
+AND		r.[RegionId] = @vRegionId;
+</value>
+  </data>
+  <data name="testInitializeAction.SqlScript" xml:space="preserve">
+    <value>/*
+Add SQL statements here that you want to run before 
+each test method (unit test) in this test class is run.
+
+In the lower pane, you can add test conditions that verify 
+whether the results of your SQL statements match what 
+you expect.
+*/</value>
+  </data>
+  <data name="SetSeason_TestAction.SqlScript" xml:space="preserve">
+    <value>--0. Sport-----------------------
+DECLARE	@vSportId		smallint,
+		@vSportName		nvarchar(50);
+SET		@vSportName = 'Football';
+EXEC	[scorepedia].[SetSport]
+		@pSportName	= @vSportName,
+		@pSportId	= @vSportId OUTPUT;
+
+--1. Region-----------------------
+DECLARE	@vRegionId		smallint,
+		@vRegionName	nvarchar(50);
+SET		@vRegionName = 'England';
+EXEC	[scorepedia].[SetRegion]
+		@pRegionName = @vRegionName,
+		@pRegionId = @vRegionId OUTPUT;
+		
+--2. Season-----------------------
+DECLARE	@vSeasonId		smallint,
+		@vSeasonName	nvarchar(50);
+SET		@vSeasonName = '2009/10';
+EXEC	[scorepedia].[SetSeason]
+		@pSeasonName = @vSeasonName,
+		@pSeasonId = @vSeasonId OUTPUT;
+
+--Check we get a value back and that it IS NOT NULL
+SELECT	CASE WHEN @vSeasonId IS NULL THEN 0 ELSE 1 END;
+
+--Check our Season got inserted
+SELECT	r.[SeasonId],r.[SeasonName]
+FROM	[scorepedia].[Season] r
+WHERE	r.[SeasonName] = @vSeasonName;
+
+--Check our returned SeasonId is the correct one
+SELECT	r.[SeasonId],r.[SeasonName]
+FROM	[scorepedia].[Season] r
+WHERE	r.[SeasonName] = @vSeasonName
+AND		r.[SeasonId] = @vSeasonId;</value>
+  </data>
+  <data name="SetCompetitionType_TestAction.SqlScript" xml:space="preserve">
+    <value>--0. Sport-----------------------
+DECLARE	@vSportId		smallint,
+		@vSportName		nvarchar(50);
+SET		@vSportName = 'Football';
+EXEC	[scorepedia].[SetSport]
+		@pSportName	= @vSportName,
+		@pSportId	= @vSportId OUTPUT;
+
+--1. Region-----------------------
+DECLARE	@vRegionId		smallint,
+		@vRegionName	nvarchar(50);
+SET		@vRegionName = 'England';
+EXEC	[scorepedia].[SetRegion]
+		@pRegionName = @vRegionName,
+		@pRegionId = @vRegionId OUTPUT;
+
+--2. Season-----------------------
+DECLARE	@vSeasonId		smallint,
+		@vSeasonName	nvarchar(50);
+SET		@vSeasonName = '2009/10';
+EXEC	[scorepedia].[SetSeason]
+		@pSeasonName = @vSeasonName,
+		@pSeasonId = @vSeasonId OUTPUT;
+
+--3. CompetitionType-----------------------
+DECLARE	@vCompetitionTypeId				tinyint,
+		@vCompetitionTypeName			nvarchar(50),
+		@vCompetitionTypeDescription	nvarchar(50);
+SET		@vCompetitionTypeName			= 'League';
+SET		@vCompetitionTypeDescription	= 'League Description';
+EXEC	[scorepedia].[SetCompetitionType]
+		@pCompetitionTypeName 			= @vCompetitionTypeName,
+		@pCompetitionTypeDescription	= @vCompetitionTypeDescription,
+		@pCompetitionTypeId 			= @vCompetitionTypeId OUTPUT;
+--Check we get a value back and that it IS NOT NULL
+SELECT	CASE WHEN @vCompetitionTypeId IS NULL THEN 0 ELSE 1 END;
+
+--Check our CompetitionType got inserted
+SELECT	r.[CompetitionTypeId],r.[CompetitionTypeName]
+FROM	[scorepedia].[CompetitionType] r
+WHERE	r.[CompetitionTypeName] = @vCompetitionTypeName;
+
+--Check our returned CompetitionTypeId is the correct one
+SELECT	r.[CompetitionTypeId],r.[CompetitionTypeName]
+FROM	[scorepedia].[CompetitionType] r
+WHERE	r.[CompetitionTypeName]	= @vCompetitionTypeName
+AND		r.[CompetitionTypeId]	= @vCompetitionTypeId;</value>
+  </data>
+  <data name="SetCompetition_TestAction.SqlScript" xml:space="preserve">
+    <value>--0. Sport-----------------------
+DECLARE	@vSportId		smallint,
+		@vSportName		nvarchar(50);
+SET		@vSportName = 'Football';
+EXEC	[scorepedia].[SetSport]
+		@pSportName	= @vSportName,
+		@pSportId	= @vSportId OUTPUT;
+
+--1. Region-----------------------
+DECLARE	@vRegionId		smallint,
+		@vRegionName	nvarchar(50);
+SET		@vRegionName = 'England';
+EXEC	[scorepedia].[SetRegion]
+		@pRegionName = @vRegionName,
+		@pRegionId = @vRegionId OUTPUT;
+
+--2. Season-----------------------
+DECLARE	@vSeasonId		smallint,
+		@vSeasonName	nvarchar(50);
+SET		@vSeasonName = '2009/10';
+EXEC	[scorepedia].[SetSeason]
+		@pSeasonName = @vSeasonName,
+		@pSeasonId = @vSeasonId OUTPUT;
+
+--3. CompetitionType-----------------------
+DECLARE	@vCompetitionTypeId				tinyint,
+		@vCompetitionTypeName			nvarchar(50),
+		@vCompetitionTypeDescription	nvarchar(50);
+SET		@vCompetitionTypeName			= 'League';
+SET		@vCompetitionTypeDescription	= 'League Description';
+EXEC	[scorepedia].[SetCompetitionType]
+		@pCompetitionTypeName 			= @vCompetitionTypeName,
+		@pCompetitionTypeDescription	= @vCompetitionTypeDescription,
+		@pCompetitionTypeId 			= @vCompetitionTypeId OUTPUT;
+
+--4. Competition-----------------------
+DECLARE	@vCompetitionId		smallint,
+		@vCompetitionName	nvarchar(50);
+SET		@vCompetitionName = 'Premier League';
+EXEC	[scorepedia].[SetCompetition]
+		@pCompetitionName		= @vCompetitionName,
+		@pCompetitionTypeID 	= @vCompetitionTypeId,
+		@pRegionId	 			= @vRegionId,
+		@pCompetitionId 		= @vCompetitionId OUTPUT;
+--Check we get a value back and that it IS NOT NULL
+SELECT	CASE WHEN @vCompetitionId IS NULL THEN 0 ELSE 1 END;
+
+--Check our Competition got inserted
+SELECT	r.[CompetitionId],r.[CompetitionName]
+FROM	[scorepedia].[Competition] r
+WHERE	r.[CompetitionName] = @vCompetitionName;
+
+--Check our returned CompetitionId is the correct one
+SELECT	c.[CompetitionId],c.[CompetitionName]
+FROM	[scorepedia].[Competition] c
+INNER	JOIN [scorepedia].[CompetitionType] ct
+ON		c.[CompetitionTypeId] = ct.[CompetitionTypeId]
+INNER	JOIN [scorepedia].[Region] r
+ON		c.[RegionId] = r.[RegionId]
+WHERE	c.[CompetitionName]			= @vCompetitionName
+AND		r.[RegionName]				= @vRegionName
+AND		ct.[CompetitionTypeName]	= @vCompetitionTypeName
+AND		c.[CompetitionId]			= @vCompetitionId;</value>
+  </data>
+  <data name="SetTeam_TestAction.SqlScript" xml:space="preserve">
+    <value>--0. Sport-----------------------
+DECLARE	@vSportId		smallint,
+		@vSportName		nvarchar(50);
+SET		@vSportName = 'Football';
+EXEC	[scorepedia].[SetSport]
+		@pSportName	= @vSportName,
+		@pSportId	= @vSportId OUTPUT;
+
+--1. Region-----------------------
+DECLARE	@vRegionId		smallint,
+		@vRegionName	nvarchar(50);
+SET		@vRegionName = 'England';
+EXEC	[scorepedia].[SetRegion]
+		@pRegionName = @vRegionName,
+		@pRegionId = @vRegionId OUTPUT;
+
+--2. Season-----------------------
+DECLARE	@vSeasonId		smallint,
+		@vSeasonName	nvarchar(50);
+SET		@vSeasonName = '2009/10';
+EXEC	[scorepedia].[SetSeason]
+		@pSeasonName = @vSeasonName,
+		@pSeasonId = @vSeasonId OUTPUT;
+
+--3. CompetitionType-----------------------
+DECLARE	@vCompetitionTypeId				tinyint,
+		@vCompetitionTypeName			nvarchar(50),
+		@vCompetitionTypeDescription	nvarchar(50);
+SET		@vCompetitionTypeName			= 'League';
+SET		@vCompetitionTypeDescription	= 'League Description';
+EXEC	[scorepedia].[SetCompetitionType]
+		@pCompetitionTypeName 			= @vCompetitionTypeName,
+		@pCompetitionTypeDescription	= @vCompetitionTypeDescription,
+		@pCompetitionTypeId 			= @vCompetitionTypeId OUTPUT;
+
+--4. Competition-----------------------
+DECLARE	@vCompetitionId		smallint,
+		@vCompetitionName	nvarchar(50);
+SET		@vCompetitionName = 'Premier League';
+EXEC	[scorepedia].[SetCompetition]
+		@pCompetitionName		= @vCompetitionName,
+		@pCompetitionTypeID 	= @vCompetitionTypeId,
+		@pRegionId	 			= @vRegionId,
+		@pCompetitionId 		= @vCompetitionId OUTPUT;
+
+--5. CompetitionSeason-----------------------
+DECLARE	@vCompetitionSeasonId		int;
+EXEC	[scorepedia].[SetCompetitionSeason]
+		@pCompetitionID 		= @vCompetitionId,
+		@pSeasonId				= @vSeasonId,
+		@pCompetitionSeasonId 	= @vCompetitionSeasonId OUTPUT;
+
+--6. Team-----------------------
+DECLARE	@vHomeTeamId			int,
+		@vAwayTeamId			int,
+		@vHomeFixtureTeamId		int,
+		@vAwayFixtureTeamId		int,
+		@vHomeTeamName			nvarchar(50),
+		@vAwayTeamName			nvarchar(50);
+SET		@vHomeTeamName = 'Aston Villa';
+SET		@vAwayTeamName = 'Arsenal';
+EXEC	[scorepedia].[SetTeam]
+		@pTeamName		= @vHomeTeamName,
+		@pSportId		= @vSportId,
+		@pTeamId 		= @vHomeTeamId OUTPUT;
+EXEC	[scorepedia].[SetTeam]
+		@pTeamName		= @vAwayTeamName,
+		@pSportId		= @vSportId,
+		@pTeamId 		= @vAwayTeamId OUTPUT;
+--Check we get a value back and that it IS NOT NULL
+SELECT	CASE WHEN @vHomeTeamId IS NULL THEN 0 ELSE 1 END;
+
+--Check our Team got inserted
+SELECT	r.[TeamId],r.[TeamName]
+FROM	[scorepedia].[Team] r
+WHERE	r.[TeamName] = @vHomeTeamName
+AND		r.[SportId]	= @vSportId;
+
+--Check our returned TeamId is the correct one
+SELECT	t.[TeamId],t.[TeamName]
+FROM	[scorepedia].[Team] t
+WHERE	t.[TeamName]	= @vHomeTeamName
+AND		t.[TeamId]		= @vHomeTeamId
+AND		t.[SportId]		= @vSportId;</value>
+  </data>
+  <data name="SetFixture_TestAction.SqlScript" xml:space="preserve">
+    <value>--0. Sport-----------------------
+DECLARE	@vSportId		smallint,
+		@vSportName		nvarchar(50);
+SET		@vSportName = 'Football';
+EXEC	[scorepedia].[SetSport]
+		@pSportName	= @vSportName,
+		@pSportId	= @vSportId OUTPUT;
+
+--1. Region-----------------------
+DECLARE	@vRegionId		smallint,
+		@vRegionName	nvarchar(50);
+SET		@vRegionName = 'England';
+EXEC	[scorepedia].[SetRegion]
+		@pRegionName = @vRegionName,
+		@pRegionId = @vRegionId OUTPUT;
+
+--2. Season-----------------------
+DECLARE	@vSeasonId		smallint,
+		@vSeasonName	nvarchar(50);
+SET		@vSeasonName = '2009/10';
+EXEC	[scorepedia].[SetSeason]
+		@pSeasonName = @vSeasonName,
+		@pSeasonId = @vSeasonId OUTPUT;
+--3. CompetitionType-----------------------
+DECLARE	@vCompetitionTypeId				tinyint,
+		@vCompetitionTypeName			nvarchar(50),
+		@vCompetitionTypeDescription	nvarchar(50);
+SET		@vCompetitionTypeName			= 'League';
+SET		@vCompetitionTypeDescription	= 'League Description';
+EXEC	[scorepedia].[SetCompetitionType]
+		@pCompetitionTypeName 			= @vCompetitionTypeName,
+		@pCompetitionTypeDescription	= @vCompetitionTypeDescription,
+		@pCompetitionTypeId 			= @vCompetitionTypeId OUTPUT;
+--4. Competition-----------------------
+DECLARE	@vCompetitionId		smallint,
+		@vCompetitionName	nvarchar(50);
+SET		@vCompetitionName = 'Premier League';
+EXEC	[scorepedia].[SetCompetition]
+		@pCompetitionName		= @vCompetitionName,
+		@pCompetitionTypeID 	= @vCompetitionTypeId,
+		@pRegionId	 			= @vRegionId,
+		@pCompetitionId 		= @vCompetitionId OUTPUT;
+--5. CompetitionSeason-----------------------
+DECLARE	@vCompetitionSeasonId		int;
+EXEC	[scorepedia].[SetCompetitionSeason]
+		@pCompetitionID 		= @vCompetitionId,
+		@pSeasonId				= @vSeasonId,
+		@pCompetitionSeasonId 	= @vCompetitionSeasonId OUTPUT;
+
+--6. Team-----------------------
+DECLARE	@vHomeTeamId			int,
+		@vAwayTeamId			int,
+		@vHomeFixtureTeamId		int,
+		@vAwayFixtureTeamId		int,
+		@vHomeTeamName			nvarchar(50),
+		@vAwayTeamName			nvarchar(50);
+SET		@vHomeTeamName = 'Aston Villa';
+SET		@vAwayTeamName = 'Arsenal';
+EXEC	[scorepedia].[SetTeam]
+		@pTeamName		= @vHomeTeamName,
+		@pSportId		= @vSportId,
+		@pTeamId 		= @vHomeTeamId OUTPUT;
+EXEC	[scorepedia].[SetTeam]
+		@pTeamName		= @vAwayTeamName,
+		@pSportId		= @vSportId,
+		@pTeamId 		= @vAwayTeamId OUTPUT;
+--7. Fixture-----------------------
+DECLARE	@vFixtureId		int,
+		@vFixtureDate	date;
+SET		@vFixtureDate	= '2010-03-18';
+EXEC	[scorepedia].[SetFixture]
+		@pHomeTeamId			= @vHomeTeamId,
+		@pAwayTeamId			= @vAwayTeamId,
+		@pFixtureDate			= @vFixtureDate,
+		@pCompetitionSeasonId	= @vCompetitionSeasonId,
+		@pHomeFixtureTeamId		= @vHomeFixtureTeamId	OUTPUT,
+		@pAwayFixtureTeamId		= @vAwayFixtureTeamId	OUTPUT,
+		@pFixtureId 			= @vFixtureId			OUTPUT;
+--Check we get a value back and that it IS NOT NULL
+SELECT	CASE WHEN @vFixtureId IS NULL THEN 0 ELSE 1 END;
+
+--Check our Fixture got inserted
+SELECT	f.[FixtureId],f.[FixtureDate]
+FROM	[scorepedia].[Fixture] f
+INNER	JOIN [scorepedia].[FixtureTeam] homeft
+ON		f.[FixtureId]		= homeft.[FixtureId]
+AND		homeft.[HomeTeamYesNo]	= 1
+INNER	JOIN [scorepedia].[FixtureTeam] awayft
+ON		f.[FixtureId]		= awayft.[FixtureId]
+AND		awayft.[HomeTeamYesNo]	= 0
+INNER	JOIN [scorepedia].[Team] homet
+ON		homeft.[TeamId] = homet.[TeamId]
+INNER	JOIN [scorepedia].[Team] awayt
+ON		awayft.[TeamId] = awayt.[TeamId]
+INNER	JOIN [scorepedia].[CompetitionSeason] cs
+ON		f.[CompetitionSeasonId] = cs.[CompetitionSeasonId]
+INNER	JOIN [scorepedia].[Competition] c
+ON		cs.[CompetitionId] = c.[CompetitionId]
+INNER	JOIN [scorepedia].[Season] s
+ON		cs.[SeasonId] = s.[SeasonId]
+WHERE	homet.[TeamName]	= @vHomeTeamName
+AND		awayt.[TeamName]	= @vAwayTeamName
+AND		c.[CompetitionName]	= @vCompetitionName
+AND		f.[FixtureDate]		= @vFixtureDate;
+
+--Check our returned FixtureId is the correct one
+SELECT	f.[FixtureId],f.[FixtureDate]
+FROM	[scorepedia].[Fixture] f
+INNER	JOIN [scorepedia].[FixtureTeam] homeft
+ON		f.[FixtureId]		= homeft.[FixtureId]
+AND		homeft.[HomeTeamYesNo]	= 1
+INNER	JOIN [scorepedia].[FixtureTeam] awayft
+ON		f.[FixtureId]		= awayft.[FixtureId]
+AND		awayft.[HomeTeamYesNo]	= 0
+INNER	JOIN [scorepedia].[Team] homet
+ON		homeft.[TeamId] = homet.[TeamId]
+INNER	JOIN [scorepedia].[Team] awayt
+ON		awayft.[TeamId] = awayt.[TeamId]
+INNER	JOIN [scorepedia].[CompetitionSeason] cs
+ON		f.[CompetitionSeasonId] = cs.[CompetitionSeasonId]
+INNER	JOIN [scorepedia].[Competition] c
+ON		cs.[CompetitionId] = c.[CompetitionId]
+INNER	JOIN [scorepedia].[Season] s
+ON		cs.[SeasonId] = s.[SeasonId]
+WHERE	homet.[TeamName]	= @vHomeTeamName
+AND		awayt.[TeamName]	= @vAwayTeamName
+AND		c.[CompetitionName]	= @vCompetitionName
+AND		f.[FixtureDate]		= @vFixtureDate
+AND		f.[FixtureId]		= @vFixtureId
+;</value>
+  </data>
+  <data name="SetPlayer_TestAction.SqlScript" xml:space="preserve">
+    <value>--0. Sport-----------------------
+DECLARE	@vSportId		smallint,
+		@vSportName		nvarchar(50);
+SET		@vSportName = 'Football';
+EXEC	[scorepedia].[SetSport]
+		@pSportName	= @vSportName,
+		@pSportId	= @vSportId OUTPUT;
+
+--1. Region-----------------------
+DECLARE	@vRegionId		smallint,
+		@vRegionName	nvarchar(50);
+SET		@vRegionName = 'England';
+EXEC	[scorepedia].[SetRegion]
+		@pRegionName = @vRegionName,
+		@pRegionId = @vRegionId OUTPUT;
+
+--2. Season-----------------------
+DECLARE	@vSeasonId		smallint,
+		@vSeasonName	nvarchar(50);
+SET		@vSeasonName = '2009/10';
+EXEC	[scorepedia].[SetSeason]
+		@pSeasonName = @vSeasonName,
+		@pSeasonId = @vSeasonId OUTPUT;
+--3. CompetitionType-----------------------
+DECLARE	@vCompetitionTypeId				tinyint,
+		@vCompetitionTypeName			nvarchar(50),
+		@vCompetitionTypeDescription	nvarchar(50);
+SET		@vCompetitionTypeName			= 'League';
+SET		@vCompetitionTypeDescription	= 'League Description';
+EXEC	[scorepedia].[SetCompetitionType]
+		@pCompetitionTypeName 			= @vCompetitionTypeName,
+		@pCompetitionTypeDescription	= @vCompetitionTypeDescription,
+		@pCompetitionTypeId 			= @vCompetitionTypeId OUTPUT;
+--4. Competition-----------------------
+DECLARE	@vCompetitionId		smallint,
+		@vCompetitionName	nvarchar(50);
+SET		@vCompetitionName = 'Premier League';
+EXEC	[scorepedia].[SetCompetition]
+		@pCompetitionName		= @vCompetitionName,
+		@pCompetitionTypeID 	= @vCompetitionTypeId,
+		@pRegionId	 			= @vRegionId,
+		@pCompetitionId 		= @vCompetitionId OUTPUT;
+--5. CompetitionSeason-----------------------
+DECLARE	@vCompetitionSeasonId		int;
+EXEC	[scorepedia].[SetCompetitionSeason]
+		@pCompetitionID 		= @vCompetitionId,
+		@pSeasonId				= @vSeasonId,
+		@pCompetitionSeasonId 	= @vCompetitionSeasonId OUTPUT;
+
+--6. Team-----------------------
+DECLARE	@vHomeTeamId			int,
+		@vAwayTeamId			int,
+		@vHomeFixtureTeamId		int,
+		@vAwayFixtureTeamId		int,
+		@vHomeTeamName			nvarchar(50),
+		@vAwayTeamName			nvarchar(50);
+SET		@vHomeTeamName = 'Aston Villa';
+SET		@vAwayTeamName = 'Arsenal';
+EXEC	[scorepedia].[SetTeam]
+		@pTeamName		= @vHomeTeamName,
+		@pSportId		= @vSportId,
+		@pTeamId 		= @vHomeTeamId OUTPUT;
+EXEC	[scorepedia].[SetTeam]
+		@pTeamName		= @vAwayTeamName,
+		@pSportId		= @vSportId,
+		@pTeamId 		= @vAwayTeamId OUTPUT;
+--7. Fixture-----------------------
+DECLARE	@vFixtureId		int,
+		@vFixtureDate	date;
+SET		@vFixtureDate	= '2010-03-18';
+EXEC	[scorepedia].[SetFixture]
+		@pHomeTeamId			= @vHomeTeamId,
+		@pAwayTeamId			= @vAwayTeamId,
+		@pFixtureDate			= @vFixtureDate,
+		@pCompetitionSeasonId	= @vCompetitionSeasonId,
+		@pHomeFixtureTeamId		= @vHomeFixtureTeamId	OUTPUT,
+		@pAwayFixtureTeamId		= @vAwayFixtureTeamId	OUTPUT,
+		@pFixtureId 			= @vFixtureId			OUTPUT;
+
+--8. Player-----------------------
+DECLARE	@vPlayerId		int,
+		@vPlayerName	nvarchar(30);
+SET		@vPlayerName	= 'James Milner';
+EXEC	[scorepedia].[SetPlayer]
+		@pPlayerName	= @vPlayerName,
+		@pPlayerId		= @vPlayerId OUTPUT;
+--Check we get a value back and that it IS NOT NULL
+SELECT	CASE WHEN @vPlayerId IS NULL THEN 0 ELSE 1 END;
+
+--Check our Player got inserted
+SELECT	f.[PlayerId],f.[PlayerName]
+FROM	[scorepedia].[Player] f
+WHERE	f.[PlayerName]	= @vPlayerName;
+
+--Check our returned PlayerId is the correct one
+SELECT	f.[PlayerId],f.[PlayerName]
+FROM	[scorepedia].[Player] f
+WHERE	f.[PlayerName]	= @vPlayerName
+AND		f.[PlayerId]	= @vPlayerId
+;
+</value>
+  </data>
+  <data name="SetScore_TestAction.SqlScript" xml:space="preserve">
+    <value>--0. Sport-----------------------
+DECLARE	@vSportId		smallint,
+		@vSportName		nvarchar(50);
+SET		@vSportName = 'Football';
+EXEC	[scorepedia].[SetSport]
+		@pSportName	= @vSportName,
+		@pSportId	= @vSportId OUTPUT;
+
+--1. Region-----------------------
+DECLARE	@vRegionId		smallint,
+		@vRegionName	nvarchar(50);
+SET		@vRegionName = 'England';
+EXEC	[scorepedia].[SetRegion]
+		@pRegionName = @vRegionName,
+		@pRegionId = @vRegionId OUTPUT;
+
+--2. Season-----------------------
+DECLARE	@vSeasonId		smallint,
+		@vSeasonName	nvarchar(50);
+SET		@vSeasonName = '2009/10';
+EXEC	[scorepedia].[SetSeason]
+		@pSeasonName = @vSeasonName,
+		@pSeasonId = @vSeasonId OUTPUT;
+--3. CompetitionType-----------------------
+DECLARE	@vCompetitionTypeId				tinyint,
+		@vCompetitionTypeName			nvarchar(50),
+		@vCompetitionTypeDescription	nvarchar(50);
+SET		@vCompetitionTypeName			= 'League';
+SET		@vCompetitionTypeDescription	= 'League Description';
+EXEC	[scorepedia].[SetCompetitionType]
+		@pCompetitionTypeName 			= @vCompetitionTypeName,
+		@pCompetitionTypeDescription	= @vCompetitionTypeDescription,
+		@pCompetitionTypeId 			= @vCompetitionTypeId OUTPUT;
+--4. Competition-----------------------
+DECLARE	@vCompetitionId		smallint,
+		@vCompetitionName	nvarchar(50);
+SET		@vCompetitionName = 'Premier League';
+EXEC	[scorepedia].[SetCompetition]
+		@pCompetitionName		= @vCompetitionName,
+		@pCompetitionTypeID 	= @vCompetitionTypeId,
+		@pRegionId	 			= @vRegionId,
+		@pCompetitionId 		= @vCompetitionId OUTPUT;
+
+--5. CompetitionSeason-----------------------
+DECLARE	@vCompetitionSeasonId		int;
+EXEC	[scorepedia].[SetCompetitionSeason]
+		@pCompetitionID 		= @vCompetitionId,
+		@pSeasonId				= @vSeasonId,
+		@pCompetitionSeasonId 	= @vCompetitionSeasonId OUTPUT;
+--6. Team-----------------------
+DECLARE	@vHomeTeamId			int,
+		@vAwayTeamId			int,
+		@vHomeFixtureTeamId		int,
+		@vAwayFixtureTeamId		int,
+		@vHomeTeamName			nvarchar(50),
+		@vAwayTeamName			nvarchar(50);
+SET		@vHomeTeamName = 'Aston Villa';
+SET		@vAwayTeamName = 'Arsenal';
+EXEC	[scorepedia].[SetTeam]
+		@pTeamName		= @vHomeTeamName,
+		@pSportId		= @vSportId,
+		@pTeamId 		= @vHomeTeamId OUTPUT;
+EXEC	[scorepedia].[SetTeam]
+		@pTeamName		= @vAwayTeamName,
+		@pSportId		= @vSportId,
+		@pTeamId 		= @vAwayTeamId OUTPUT;
+--7. Fixture-----------------------
+DECLARE	@vFixtureId		int,
+		@vFixtureDate	date;
+SET		@vFixtureDate	= '2010-03-18';
+EXEC	[scorepedia].[SetFixture]
+		@pHomeTeamId			= @vHomeTeamId,
+		@pAwayTeamId			= @vAwayTeamId,
+		@pFixtureDate			= @vFixtureDate,
+		@pCompetitionSeasonId	= @vCompetitionSeasonId,
+		@pHomeFixtureTeamId		= @vHomeFixtureTeamId	OUTPUT,
+		@pAwayFixtureTeamId		= @vAwayFixtureTeamId	OUTPUT,
+		@pFixtureId 			= @vFixtureId			OUTPUT;
+
+--8. Player-----------------------
+DECLARE	@vPlayerId		int,
+		@vPlayerName	nvarchar(30);
+SET		@vPlayerName	= 'James Milner';
+EXEC	[scorepedia].[SetPlayer]
+		@pPlayerName	= @vPlayerName,
+		@pPlayerId		= @vPlayerId OUTPUT;
+--9. Score-----------------------
+DECLARE	@vScoreId		int,
+		@vNumberOfGoals	tinyint;
+SET		@vNumberOfGoals	= 1;
+EXEC	[scorepedia].[SetScore]
+		@pPlayerId			= @vPlayerId,
+		@pFixtureTeamId		= @vHomeFixtureTeamId,
+		@pNumberOfGoals		= @vNumberOfGoals,
+		@pScoreId			= @vScoreId OUTPUT;
+--Check we get a value back and that it IS NOT NULL
+SELECT	CASE WHEN @vScoreId IS NULL THEN 0 ELSE 1 END;
+
+--Check our Score got inserted
+SELECT	s.[ScoreId],s.[NumberOfGoals]
+FROM	[scorepedia].[Score] s
+WHERE	s.[PlayerId]	= @vPlayerId
+AND		s.[FixtureTeamId]	= @vHomeFixtureTeamId;
+
+--Check our returned ScoreId is the correct one
+SELECT	s.[ScoreId],s.[NumberOfGoals]
+FROM	[scorepedia].[Score] s
+WHERE	s.[PlayerId]		= @vPlayerId
+AND		s.[FixtureTeamId]	= @vHomeFixtureTeamId
+AND		s.[ScoreId]			= @vScoreId
+;
+</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>

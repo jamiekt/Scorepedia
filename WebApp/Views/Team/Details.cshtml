@@ -1,0 +1,13 @@
+﻿@model WebApp.Models.Team
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Sport: @Model.Sport.SportName, Team Details: @Model.TeamName</h2>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TeamId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

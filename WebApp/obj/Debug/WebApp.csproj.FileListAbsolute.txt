@@ -1,0 +1,6 @@
+C:\Users\jamie\Documents\Visual Studio 2010\Projects\scorepedia\WebApp\bin\WebApp.dll
+C:\Users\jamie\Documents\Visual Studio 2010\Projects\scorepedia\WebApp\bin\WebApp.pdb
+C:\Users\jamie\Documents\Visual Studio 2010\Projects\scorepedia\WebApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jamie\Documents\Visual Studio 2010\Projects\scorepedia\WebApp\obj\Debug\WebApp.dll
+C:\Users\jamie\Documents\Visual Studio 2010\Projects\scorepedia\WebApp\obj\Debug\WebApp.pdb
+C:\Users\jamie\Documents\Visual Studio 2010\Projects\scorepedia\WebApp\bin\EntityFramework.dll

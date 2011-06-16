@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApp.Models.Team>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            TeamName
+        </th>
+        <th>
+            SportId
+        </th>
+        <th>
+            CreatedDate
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TeamId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TeamId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TeamId })
+        </td>
+        <td>
+            @item.TeamName
+        </td>
+        <td>
+            @item.SportId
+        </td>
+        <td>
+            @String.Format("{0:g}", item.CreatedDate)
+        </td>
+    </tr>
+}
+
+</table>
+

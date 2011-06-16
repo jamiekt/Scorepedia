@@ -1,0 +1,8 @@
+﻿3. Adding a team to a fixture that already has 2 teams
+4. Adding a team to a fixture that is a result
+5. Making a fixture a result when there is only one team in the fixture
+6. Adding a scorer to a fixture that only has one team
+7. Create a fixture in same competition on same day as an existing fixture with same home or away team
+8. Same teams cannot play each other in same season more than twice
+9. Same teams cannot play each other in same season with same home/away settings more than once
+10. Changing the date of an existing fixture should result in same teams in same CompetitionSeason just with a different date
